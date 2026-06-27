@@ -489,84 +489,143 @@ h3 {
 }
 
 .contact-section {
-  align-items: end;
-  background: linear-gradient(135deg, var(--coral), var(--accent-2));
-  color: var(--ink);
+  align-items: center;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 42%),
+    linear-gradient(180deg, var(--bg-soft), var(--bg));
+  border-top: 1px solid var(--line);
+  color: var(--text);
   display: grid;
-  gap: 28px;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.44fr);
-  padding: 88px clamp(20px, 5vw, 72px);
+  gap: clamp(28px, 6vw, 72px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.48fr);
+  overflow: hidden;
+  padding: 104px clamp(20px, 5vw, 72px);
+  position: relative;
 }
 
-.contact-section .eyebrow,
+.contact-section::after {
+  background:
+    linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 44%, transparent), transparent),
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent);
+  content: "";
+  height: 1px;
+  left: 8%;
+  position: absolute;
+  right: 8%;
+  top: 0;
+}
+
+.contact-section .eyebrow {
+  color: var(--accent);
+}
+
 .contact-section p {
-  color: var(--ink);
+  color: var(--muted);
+}
+
+.contact-section h2 {
+  max-width: 940px;
 }
 
 .contact-panel {
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
   display: grid;
-  gap: 12px;
+  gap: 10px;
+  padding: 12px;
+  position: relative;
+}
+
+.contact-panel::before {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  border-radius: 8px 0 0 8px;
+  bottom: 12px;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 12px;
+  width: 3px;
 }
 
 .contact-item,
 .connect-button {
   align-items: center;
-  background: var(--ink);
+  background: color-mix(in srgb, var(--text) 5%, transparent);
   border-radius: 8px;
-  border: 0;
+  border: 1px solid transparent;
   color: var(--text);
   display: grid;
   font-family: inherit;
-  font-size: clamp(1rem, 2vw, 1.22rem);
+  font-size: 0.98rem;
   font-weight: 800;
-  gap: 14px;
-  grid-template-columns: 42px minmax(0, 1fr);
-  padding: 16px 18px;
+  gap: 12px;
+  grid-template-columns: 34px minmax(0, 1fr);
+  min-height: 66px;
+  padding: 12px 14px;
   text-align: left;
 }
 
 .contact-item small,
-.contact-item strong {
+.contact-item strong,
+.connect-button small,
+.connect-button strong {
   display: block;
 }
 
-.contact-item small {
+.contact-item small,
+.connect-button small {
   color: color-mix(in srgb, var(--text) 70%, transparent);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  margin-top: 4px;
+  margin-top: 3px;
   overflow-wrap: anywhere;
 }
 
 .contact-icon {
   align-items: center;
-  background: color-mix(in srgb, var(--text) 11%, transparent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
   border-radius: 8px;
+  color: var(--accent);
   display: inline-flex;
-  height: 42px;
+  height: 34px;
   justify-content: center;
-  width: 42px;
+  width: 34px;
 }
 
 .contact-icon svg,
 .modal-close svg {
   fill: none;
-  height: 22px;
+  height: 18px;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.9;
-  width: 22px;
+  stroke-width: 2;
+  width: 18px;
 }
 
 .connect-button {
   cursor: pointer;
-  transition: transform 160ms ease, background 160ms ease;
+  padding-right: 44px;
+  position: relative;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.connect-button::after {
+  color: var(--accent);
+  content: "->";
+  font-weight: 900;
+  position: absolute;
+  right: 16px;
+  top: 22px;
 }
 
 .connect-button:hover,
 .connect-button:focus-visible {
-  background: color-mix(in srgb, var(--ink) 88%, var(--accent));
+  background: color-mix(in srgb, var(--accent) 13%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 42%, transparent);
   transform: translateY(-2px);
 }
 
