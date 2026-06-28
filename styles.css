@@ -295,62 +295,6 @@ h3 {
   color: var(--text);
 }
 
-.intro-band {
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 46%),
-    var(--text);
-  display: grid;
-  gap: 1px;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 1px;
-}
-
-.stat {
-  background: color-mix(in srgb, var(--ink) 4%, var(--text));
-  color: var(--ink);
-  display: grid;
-  gap: 8px;
-  min-height: 166px;
-  padding: 28px clamp(18px, 3.2vw, 46px);
-  position: relative;
-}
-
-.stat::before {
-  background: linear-gradient(180deg, var(--accent), var(--accent-2));
-  border-radius: 999px;
-  content: "";
-  height: 38px;
-  left: 0;
-  position: absolute;
-  top: 30px;
-  width: 3px;
-}
-
-.stat-kicker {
-  color: color-mix(in srgb, var(--ink) 56%, transparent);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.stat strong {
-  display: block;
-  font-size: clamp(2.8rem, 5.2vw, 4.6rem);
-  line-height: 1;
-}
-
-.stat span {
-  color: color-mix(in srgb, var(--ink) 72%, transparent);
-  font-weight: 800;
-}
-
-.stat span:last-child {
-  font-size: 0.95rem;
-  line-height: 1.45;
-  max-width: 260px;
-}
-
 .section {
   padding: 112px clamp(20px, 5vw, 72px);
 }
@@ -833,9 +777,6 @@ h3 {
     min-height: 380px;
   }
 
-  .intro-band {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 860px) {
@@ -886,7 +827,6 @@ h3 {
       color-mix(in srgb, var(--bg) 20%, transparent);
   }
 
-  .intro-band,
   .section-heading,
   .split-section,
   .timeline,
@@ -942,14 +882,6 @@ h3 {
   .button {
     justify-content: center;
     width: 100%;
-  }
-
-  .stat {
-    min-height: 104px;
-  }
-
-  .stat strong {
-    font-size: clamp(2.55rem, 15vw, 4rem);
   }
 
   .contact-item,
