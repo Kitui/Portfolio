@@ -58,7 +58,18 @@ const projectContent = {
       "Designed a production-ready decision support platform combining supervised learning, reinforcement learning, explainable AI, and cloud deployment patterns.",
     impact:
       "Improves allocation consistency, supports accountable decision-making, and gives administrators a more transparent basis for funding recommendations.",
-    stack: ["Python", "Scikit-learn", "XGBoost", "LightGBM", "SHAP", "Flask", "Docker", "GCP"],
+    stack: [
+      "Backend: Flask",
+      "Database: SQLite with Flask-SQLAlchemy",
+      "Authentication: Flask-Login + Flask-Bcrypt",
+      "ML models: scikit-learn, XGBoost, LightGBM, Ridge stacking model",
+      "RL model: PyTorch DDPG actor/critic",
+      "Data processing: pandas, NumPy, scikit-learn preprocessing/PCA",
+      "Exports: openpyxl / pandas Excel export",
+      "Frontend: HTML templates with Bootstrap, jQuery, Chart.js, DataTables",
+      "Testing: pytest",
+      "Deployment: Dockerfile, Flask app on port 8080",
+    ],
   },
   ciq: {
     category: "Customer Intelligence",
@@ -69,7 +80,18 @@ const projectContent = {
       "Designed an AI-powered platform architecture for segmentation, CLV prediction, churn prediction, campaign analytics, behavioral insights, and dashboards.",
     impact:
       "Helps teams make smarter customer engagement decisions, prioritize retention, and translate customer data into executive-ready actions.",
-    stack: ["Python", "SQL", "FastAPI", "PostgreSQL", "Scikit-learn", "Pandas", "Power BI", "Docker"],
+    stack: [
+      "Backend: Python + FastAPI",
+      "Server: Uvicorn",
+      "Dashboard: HTML, CSS, Vanilla JavaScript",
+      "Database: SQLite",
+      "ML / Analytics: NumPy + scikit-learn",
+      "File imports: CSV, Excel .xlsx, ZIP bulk import",
+      "Testing: Pytest",
+      "Deployment: Render-ready via render.yaml",
+      "Procfile-based host support",
+      "Repo hosting: GitHub",
+    ],
   },
   traffic: {
     category: "Smart Cities / Operations",
@@ -80,7 +102,21 @@ const projectContent = {
       "Designed a platform for vehicle access, visitor management, parking allocation, human traffic monitoring, digital passes, analytics, and security workflows.",
     impact:
       "Creates a smarter operating model for estates and mixed-use environments through automation, analytics, and integrated movement management.",
-    stack: ["Python", "FastAPI", "PostgreSQL", "REST APIs", "Google Maps API", "QR Codes", "Power BI"],
+    stack: [
+      "Backend framework: Django 6",
+      "Programming language: Python",
+      "Database: SQLite for prototype, PostgreSQL-ready for deployment",
+      "Frontend: HTML, CSS, JavaScript",
+      "UI framework: Bootstrap 5",
+      "Charts & reports: Chart.js",
+      "Authentication: Django Authentication System",
+      "Authorization: Custom role-based access control",
+      "Static files: WhiteNoise",
+      "Deployment server: Gunicorn",
+      "Environment config: .env, python-dotenv, dj-database-url",
+      "Version control: Git + GitHub",
+      "Hosting ready: PythonAnywhere, Render, Railway, Azure, AWS, or similar platforms",
+    ],
   },
 };
 
