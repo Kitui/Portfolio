@@ -14,6 +14,9 @@ const projectDialog = projectModal.querySelector(".project-modal");
 const projectButtons = document.querySelectorAll("[data-project]");
 const closeProjectButton = document.querySelector("[data-close-project]");
 const projectContactButton = document.querySelector("[data-project-contact]");
+const projectCards = document.querySelectorAll("[data-project-card]");
+const projectFilterNote = document.querySelector("[data-project-filter-note]");
+const skillMatch = document.querySelector("[data-skill-match]");
 let activeBeforeModal = null;
 let activeProject = null;
 
@@ -48,6 +51,37 @@ const capabilityContent = {
   },
 };
 
+const labContent = {
+  decision: {
+    code: "LAB-01",
+    title: "AI-supported allocation and decision workflows.",
+    body:
+      "Building decision support systems that combine predictive models, explainability, optimization, and accountable human review.",
+    signals: ["Modeling", "Explainability", "Governance"],
+  },
+  customer: {
+    code: "LAB-02",
+    title: "Customer intelligence that turns behavior into action.",
+    body:
+      "Designing segmentation, churn, lifetime value, and campaign analytics flows that help teams focus retention and growth efforts.",
+    signals: ["Segmentation", "CLV", "Campaign analytics"],
+  },
+  operations: {
+    code: "LAB-03",
+    title: "Smart operating systems for complex physical environments.",
+    body:
+      "Connecting access, visitor flow, parking, security, and reporting into analytics-led operational workflows.",
+    signals: ["Access control", "Automation", "Operational visibility"],
+  },
+  delivery: {
+    code: "LAB-04",
+    title: "Delivery systems that keep complex work visible.",
+    body:
+      "Combining requirements, roadmaps, stakeholder alignment, risk control, and executive reporting into practical delivery structures.",
+    signals: ["Roadmaps", "Risk management", "Executive reporting"],
+  },
+};
+
 const projectContent = {
   bursary: {
     category: "AI / Decision Support",
@@ -58,6 +92,13 @@ const projectContent = {
       "Designed a production-ready decision support platform combining supervised learning, reinforcement learning, explainable AI, and cloud deployment patterns.",
     impact:
       "Improves allocation consistency, supports accountable decision-making, and gives administrators a more transparent basis for funding recommendations.",
+    workflow: [
+      "Collect and validate applicant, household, academic, and need-based data.",
+      "Train supervised models and stacking layers to estimate eligibility and priority.",
+      "Use reinforcement learning to optimize allocation decisions across limited funds.",
+      "Expose model drivers and allocation reasoning through explainability views.",
+    ],
+    highlights: ["Fairness-first design", "SHAP explainability", "RL allocation logic", "Public-sector accountability"],
     stack: [
       "Backend: Flask",
       "Database: SQLite with Flask-SQLAlchemy",
@@ -80,6 +121,13 @@ const projectContent = {
       "Designed an AI-powered platform architecture for segmentation, CLV prediction, churn prediction, campaign analytics, behavioral insights, and dashboards.",
     impact:
       "Helps teams make smarter customer engagement decisions, prioritize retention, and translate customer data into executive-ready actions.",
+    workflow: [
+      "Import customer data from CSV, Excel, or bulk ZIP sources.",
+      "Prepare customer features for segmentation, churn risk, and value scoring.",
+      "Surface behavioral insights through dashboard-ready analytics.",
+      "Help teams decide where to focus retention, campaigns, and customer success actions.",
+    ],
+    highlights: ["Churn prediction", "CLV scoring", "Customer segmentation", "Executive dashboards"],
     stack: [
       "Backend: Python + FastAPI",
       "Server: Uvicorn",
@@ -102,6 +150,13 @@ const projectContent = {
       "Designed a platform for vehicle access, visitor management, parking allocation, human traffic monitoring, digital passes, analytics, and security workflows.",
     impact:
       "Creates a smarter operating model for estates and mixed-use environments through automation, analytics, and integrated movement management.",
+    workflow: [
+      "Register residents, visitors, vehicles, passes, roles, and access rules.",
+      "Coordinate visitor flow, parking allocation, checkpoints, and security operations.",
+      "Generate operational dashboards for estate managers and security teams.",
+      "Prepare the platform for integrations such as QR, RFID, maps, and computer vision.",
+    ],
+    highlights: ["Visitor management", "Parking allocation", "Role-based workflows", "Smart operations"],
     stack: [
       "Backend framework: Django 6",
       "Programming language: Python",
@@ -118,6 +173,48 @@ const projectContent = {
       "Hosting ready: PythonAnywhere, Render, Railway, Azure, AWS, or similar platforms",
     ],
   },
+};
+
+const architectureContent = {
+  bursary: {
+    nodes: ["Applicant Data", "ML Scoring", "RL Allocation", "Explainable Dashboard"],
+    previewTitle: "Decision Support Console",
+    previewBody:
+      "A review console for eligibility signals, model confidence, allocation recommendations, and transparent decision notes.",
+    bars: ["72%", "44%", "86%", "58%"],
+  },
+  ciq: {
+    nodes: ["Customer Imports", "Feature Layer", "Churn / CLV Models", "Executive Dashboards"],
+    previewTitle: "Customer Intelligence Dashboard",
+    previewBody:
+      "A dashboard view for segments, churn risk, customer value, campaign performance, and recommended engagement actions.",
+    bars: ["64%", "82%", "48%", "74%"],
+  },
+  traffic: {
+    nodes: ["Access Points", "Visitor Flow", "Parking & Security", "Operations Reporting"],
+    previewTitle: "Smart Operations Command View",
+    previewBody:
+      "An operating view for visitor movement, parking pressure, digital passes, security checks, and estate-level performance.",
+    bars: ["56%", "76%", "68%", "90%"],
+  },
+};
+
+const renderTags = (container, items) => {
+  container.replaceChildren();
+  items.forEach((item) => {
+    const tag = document.createElement("span");
+    tag.textContent = item;
+    container.append(tag);
+  });
+};
+
+const renderList = (container, items) => {
+  container.replaceChildren();
+  items.forEach((item) => {
+    const entry = document.createElement("li");
+    entry.textContent = item;
+    container.append(entry);
+  });
 };
 
 const setTheme = (theme) => {
@@ -195,7 +292,9 @@ const openProjectModal = (projectKey) => {
   projectModal.querySelector("[data-project-impact]").textContent = project.impact;
 
   const stack = projectModal.querySelector("[data-project-stack]");
-  stack.innerHTML = project.stack.map((item) => `<span>${item}</span>`).join("");
+  renderTags(stack, project.stack);
+  renderList(projectModal.querySelector("[data-project-workflow]"), project.workflow);
+  renderTags(projectModal.querySelector("[data-project-highlights]"), project.highlights);
 
   projectModal.hidden = false;
   document.body.style.overflow = "hidden";
@@ -297,6 +396,44 @@ document.querySelectorAll("[data-capability]").forEach((button) => {
   });
 });
 
+document.querySelectorAll("[data-lab]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const content = labContent[button.dataset.lab];
+    if (!content) return;
+
+    document.querySelectorAll("[data-lab]").forEach((item) => {
+      item.classList.toggle("is-active", item === button);
+    });
+
+    const display = document.querySelector("[data-lab-display]");
+    display.querySelector(".lab-code").textContent = content.code;
+    display.querySelector("h3").textContent = content.title;
+    display.querySelector("p").textContent = content.body;
+    renderTags(display.querySelector(".lab-signal"), content.signals);
+  });
+});
+
+document.querySelectorAll("[data-project-filter]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.projectFilter;
+
+    document.querySelectorAll("[data-project-filter]").forEach((item) => {
+      item.classList.toggle("is-active", item === button);
+    });
+
+    let visibleCount = 0;
+    projectCards.forEach((card) => {
+      const tags = card.dataset.projectTags.split(" ");
+      const isVisible = filter === "all" || tags.includes(filter);
+      card.classList.toggle("is-hidden", !isVisible);
+      if (isVisible) visibleCount += 1;
+    });
+
+    projectFilterNote.textContent =
+      filter === "all" ? "Showing all featured work." : `Showing ${visibleCount} project${visibleCount === 1 ? "" : "s"} connected to ${filter}.`;
+  });
+});
+
 document.querySelectorAll("[data-skill-filter]").forEach((button) => {
   button.addEventListener("click", () => {
     const filter = button.dataset.skillFilter;
@@ -306,6 +443,66 @@ document.querySelectorAll("[data-skill-filter]").forEach((button) => {
 
     document.querySelectorAll("[data-skill-group]").forEach((group) => {
       group.classList.toggle("is-hidden", filter !== "all" && group.dataset.skillGroup !== filter);
+    });
+  });
+});
+
+document.querySelectorAll(".skill-list span").forEach((chip) => {
+  chip.setAttribute("role", "button");
+  chip.setAttribute("tabindex", "0");
+  chip.setAttribute("aria-label", `Highlight projects using ${chip.textContent}`);
+
+  const highlightSkill = () => {
+    const skill = chip.textContent.trim().toLowerCase();
+    document.querySelectorAll(".skill-list span").forEach((item) => item.classList.toggle("is-selected", item === chip));
+
+    let matchCount = 0;
+    projectCards.forEach((card) => {
+      const projectKey = card.querySelector("[data-project]")?.dataset.project;
+      const project = projectContent[projectKey];
+      const haystack = [project?.title, project?.category, project?.challenge, project?.solution, project?.impact, ...(project?.stack || []), ...(project?.highlights || [])]
+        .join(" ")
+        .toLowerCase();
+      const matches = haystack.includes(skill) || skill.split(" ").some((part) => part.length > 3 && haystack.includes(part));
+      card.classList.toggle("is-matched", matches);
+      if (matches) matchCount += 1;
+    });
+
+    skillMatch.textContent = `${chip.textContent.trim()} appears in ${matchCount} highlighted project${matchCount === 1 ? "" : "s"}.`;
+  };
+
+  chip.addEventListener("click", highlightSkill);
+  chip.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      highlightSkill();
+    }
+  });
+});
+
+document.querySelectorAll("[data-architecture]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const content = architectureContent[button.dataset.architecture];
+    if (!content) return;
+
+    document.querySelectorAll("[data-architecture]").forEach((item) => {
+      item.classList.toggle("is-active", item === button);
+    });
+
+    const flow = document.querySelector("[data-architecture-flow]");
+    flow.replaceChildren();
+    content.nodes.forEach((node) => {
+      const nodeEl = document.createElement("div");
+      nodeEl.className = "flow-node";
+      nodeEl.textContent = node;
+      flow.append(nodeEl);
+    });
+
+    const preview = document.querySelector("[data-preview-panel]");
+    preview.querySelector(".preview-topline strong").textContent = content.previewTitle;
+    preview.querySelector("p").textContent = content.previewBody;
+    preview.querySelectorAll(".preview-screen span").forEach((bar, index) => {
+      bar.style.setProperty("--height", content.bars[index] || "50%");
     });
   });
 });
@@ -337,7 +534,7 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.12 }
 );
 
-document.querySelectorAll(".section-heading, .project-card, .timeline article, .skill-grid article, .evidence-grid article, .capability-shell, .contact-panel").forEach((element) => {
+document.querySelectorAll(".section-heading, .project-card, .timeline article, .skill-grid article, .evidence-grid article, .capability-shell, .lab-console, .architecture-board, .contact-panel").forEach((element) => {
   element.classList.add("reveal");
   revealObserver.observe(element);
 });
