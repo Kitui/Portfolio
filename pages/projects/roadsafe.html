@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="RoadSafe Lakehouse case study by Paul John Kitui."
+  >
+
+  <title>RoadSafe Lakehouse | Paul John Kitui</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Shared portfolio styles -->
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+
+  <!-- Case study styles -->
+  <link rel="stylesheet" href="../../assets/css/case-study.css">
+  <link rel="stylesheet" href="../../assets/css/sidebar.css"
+>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- Shared scripts -->
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/sidebar.js" defer></script>
+</head>
+
+<body class="case-study-page">
+
+  <a class="skip-link" href="#main-content">
+    Skip to content
+  </a>
+
+  <!-- MOBILE HEADER -->
+<header class="mobile-portfolio-header">
+
+  <a
+    class="mobile-brand"
+    href="../../index.html"
+    aria-label="Paul John Kitui portfolio home"
+  >
+    <span class="mobile-brand-mark">PK</span>
+
+    <span class="mobile-brand-name">
+      PAUL JOHN KITUI
+    </span>
+  </a>
+
+  <button
+    class="sidebar-mobile-toggle"
+    id="sidebar-mobile-toggle"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="portfolio-sidebar"
+  >
+    <i data-lucide="menu"></i>
+  </button>
+
+</header>
+
+<!-- GLOBAL SIDEBAR -->
+<aside
+  class="portfolio-sidebar"
+  id="portfolio-sidebar"
+  aria-label="Portfolio navigation"
+>
+  <div class="sidebar-inner">
+
+    <div class="sidebar-identity">
+
+      <a
+        class="sidebar-brand"
+        href="../../index.html"
+        aria-label="Paul John Kitui portfolio home"
+      >
+        <span class="sidebar-brand-mark">
+          PK
+        </span>
+
+        <span class="sidebar-brand-name">
+          PAUL JOHN KITUI
+        </span>
+      </a>
+
+      <p class="sidebar-brand-role">
+        CLOUD DATA ENGINEER
+      </p>
+
+    </div>
+
+    <nav
+      class="sidebar-navigation"
+      aria-label="Main portfolio navigation"
+    >
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#home"
+        data-tooltip="Home"
+      >
+        <i data-lucide="house"></i>
+
+        <span class="sidebar-nav-label">
+          HOME
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#about"
+        data-tooltip="About"
+      >
+        <i data-lucide="user-round"></i>
+
+        <span class="sidebar-nav-label">
+          ABOUT
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link active"
+        href="../../index.html#projects"
+        data-tooltip="Projects"
+      >
+        <i data-lucide="box"></i>
+
+        <span class="sidebar-nav-label">
+          PROJECTS
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#journey"
+        data-tooltip="Professional Evolution"
+      >
+        <i data-lucide="activity"></i>
+
+        <span class="sidebar-nav-label">
+          PROFESSIONAL EVOLUTION
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#skills"
+        data-tooltip="Skills"
+      >
+        <i data-lucide="code-2"></i>
+
+        <span class="sidebar-nav-label">
+          SKILLS
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#contact"
+        data-tooltip="Contact"
+      >
+        <i data-lucide="mail"></i>
+
+        <span class="sidebar-nav-label">
+          CONTACT
+        </span>
+      </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+      <button
+        class="sidebar-theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch to light theme"
+      >
+        <span class="sidebar-theme-main">
+          <i data-lucide="sun"></i>
+          <span>LIGHT MODE</span>
+        </span>
+
+        <i data-lucide="moon"></i>
+      </button>
+
+      <div class="sidebar-availability">
+
+        <div class="sidebar-availability-heading">
+          <span class="sidebar-availability-dot"></span>
+          AVAILABLE
+        </div>
+
+        <p>
+          Open to opportunities and technical collaborations.
+        </p>
+
+      </div>
+
+      <div class="sidebar-socials">
+
+        <a
+          class="sidebar-social-link"
+          href="https://github.com/kitui"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i data-lucide="github"></i>
+        </a>
+
+        <a
+          class="sidebar-social-link"
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i data-lucide="linkedin"></i>
+        </a>
+
+        <a
+          class="sidebar-social-link"
+          href="mailto:paulkitui@gmail.com"
+          aria-label="Email"
+        >
+          <i data-lucide="mail"></i>
+        </a>
+
+      </div>
+
+      <div class="sidebar-copyright">
+        <p>© 2026 Paul John Kitui</p>
+        <p>All rights reserved.</p>
+      </div>
+
+    </div>
+
+  </div>
+</aside>
+
+<div
+  class="sidebar-backdrop"
+  id="sidebar-backdrop"
+  aria-hidden="true"
+></div>
+<div class="page-content"></div>
+  <main id="main-content" class="case-study-main">
+
+    <!-- HERO -->
+    <section class="case-hero">
+      <div class="case-grid-background" aria-hidden="true"></div>
+
+      <div class="container">
+
+        <div class="case-hero-layout">
+
+          <div class="case-title-area">
+
+            <p class="case-eyebrow">
+              CASE STUDY
+              <span>/</span>
+              DATA ENGINEERING
+            </p>
+
+            <h1>RoadSafe Lakehouse</h1>
+
+            <p class="case-subtitle">
+              Building a governed medallion lakehouse for large-scale
+              accident analytics.
+            </p>
+
+            <div class="case-meta">
+
+              <span class="case-status">
+                <span class="status-dot"></span>
+                COMPLETED
+              </span>
+
+              <span class="meta-item">
+                <span class="meta-dot"></span>
+                Databricks
+              </span>
+
+              <span class="meta-item">
+                <span class="meta-dot"></span>
+                Delta Lake
+              </span>
+
+              <span class="meta-item">
+                <span class="meta-dot"></span>
+                BigQuery
+              </span>
+
+              <span class="meta-item">
+                <span class="meta-dot"></span>
+                PySpark
+              </span>
+
+            </div>
+          </div>
+
+          <div class="case-metrics">
+
+            <article class="metric-card">
+              <div class="metric-icon blue">
+                <i data-lucide="database"></i>
+              </div>
+
+              <div>
+                <h2>100,000+</h2>
+                <h3>Records Processed</h3>
+                <p>
+                  Accident and road-safety records ingested,
+                  validated and transformed.
+                </p>
+              </div>
+            </article>
+
+            <article class="metric-card">
+              <div class="metric-icon purple">
+                <i data-lucide="layers-3"></i>
+              </div>
+
+              <div>
+                <h2>Bronze / Silver / Gold</h2>
+                <h3>Medallion Architecture</h3>
+                <p>
+                  Layered data design delivering trusted,
+                  curated and business-ready data.
+                </p>
+              </div>
+            </article>
+
+            <article class="metric-card">
+              <div class="metric-icon orange">
+                <i data-lucide="chart-no-axes-combined"></i>
+              </div>
+
+              <div>
+                <h2>BigQuery</h2>
+                <h3>Analytics Publishing</h3>
+                <p>
+                  Curated analytical models prepared for
+                  reporting and self-service BI.
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW AND ARCHITECTURE -->
+    <section class="case-section compact-section">
+      <div class="container">
+
+        <div class="overview-layout">
+
+          <article class="case-panel overview-panel">
+
+            <div class="panel-heading">
+              <span class="panel-icon">
+                <i data-lucide="file-text"></i>
+              </span>
+
+              <h2>Project Overview</h2>
+            </div>
+
+            <p>
+              RoadSafe Lakehouse is an end-to-end data engineering
+              solution that consolidates accident records into a
+              unified and governed analytical platform.
+            </p>
+
+            <p>
+              The platform uses a medallion architecture on Databricks
+              with Delta Lake and Unity Catalog to establish data
+              quality, traceability, governance and secure access.
+            </p>
+
+            <p>
+              Curated datasets and semantic business views are then
+              published to Google BigQuery for downstream reporting,
+              dashboarding and analytical consumption.
+            </p>
+
+          </article>
+
+          <article class="case-panel architecture-panel">
+
+            <div class="architecture-flow">
+
+              <div class="architecture-source architecture-group">
+
+                <span class="architecture-label">
+                  DATA SOURCES
+                </span>
+
+                <div class="source-list">
+
+                  <div>
+                    <i data-lucide="file-spreadsheet"></i>
+                    <span>Road Accident Records</span>
+                  </div>
+
+                  <div>
+                    <i data-lucide="car-front"></i>
+                    <span>Vehicle and Driver Data</span>
+                  </div>
+
+                  <div>
+                    <i data-lucide="map-pin"></i>
+                    <span>Location and Road Network</span>
+                  </div>
+
+                  <div>
+                    <i data-lucide="cloud-sun"></i>
+                    <span>Weather and External Data</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="architecture-arrow">
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="architecture-medallion architecture-group">
+
+                <span class="architecture-label purple-text">
+                  MEDALLION LAKEHOUSE ARCHITECTURE
+                </span>
+
+                <div class="medallion-layers">
+
+                  <div class="architecture-layer bronze-layer">
+                    <span class="layer-name">BRONZE</span>
+
+                    <i data-lucide="database"></i>
+
+                    <h3>Raw Ingestion</h3>
+
+                    <p>
+                      Raw data landed as-is in Delta format.
+                    </p>
+                  </div>
+
+                  <div class="layer-arrow">
+                    <i data-lucide="arrow-right"></i>
+                  </div>
+
+                  <div class="architecture-layer silver-layer">
+                    <span class="layer-name">SILVER</span>
+
+                    <i data-lucide="database"></i>
+
+                    <h3>Cleaned and Conformed</h3>
+
+                    <p>
+                      Standardised, validated and deduplicated data.
+                    </p>
+                  </div>
+
+                  <div class="layer-arrow">
+                    <i data-lucide="arrow-right"></i>
+                  </div>
+
+                  <div class="architecture-layer gold-layer">
+                    <span class="layer-name">GOLD</span>
+
+                    <i data-lucide="database"></i>
+
+                    <h3>Curated and Aggregated</h3>
+
+                    <p>
+                      Business-ready models and analytical summaries.
+                    </p>
+                  </div>
+
+                  <div class="layer-arrow">
+                    <i data-lucide="arrow-right"></i>
+                  </div>
+
+                  <div class="architecture-layer semantic-layer">
+                    <span class="layer-name">SEMANTIC</span>
+
+                    <i data-lucide="box"></i>
+
+                    <h3>Analytics Layer</h3>
+
+                    <p>
+                      Consistent metrics and reporting views.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div class="governance-strip">
+                  <i data-lucide="shield-check"></i>
+
+                  UNITY CATALOG — GOVERNANCE, LINEAGE,
+                  ACCESS CONTROL AND DATA QUALITY
+                </div>
+
+              </div>
+
+              <div class="architecture-arrow">
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="architecture-output architecture-group">
+
+                <span class="architecture-label">
+                  CONSUMPTION
+                </span>
+
+                <div class="output-item">
+                  <i data-lucide="chart-no-axes-combined"></i>
+
+                  <div>
+                    <h3>BigQuery</h3>
+                    <p>Published analytical datasets</p>
+                  </div>
+                </div>
+
+                <div class="output-item">
+                  <i data-lucide="bar-chart-3"></i>
+
+                  <div>
+                    <h3>BI and Dashboards</h3>
+                    <p>Executive and self-service reporting</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROBLEM, SOLUTION, PERSONAL CONTRIBUTION -->
+    <section class="case-section compact-section">
+      <div class="container">
+
+        <div class="three-column-layout">
+
+          <article class="case-panel problem-panel">
+
+            <div class="panel-heading red-heading">
+              <span class="panel-icon">
+                <i data-lucide="circle-alert"></i>
+              </span>
+
+              <h2>The Problem</h2>
+            </div>
+
+            <ul class="case-list red-list">
+              <li>Data distributed across inconsistent sources and formats.</li>
+              <li>Duplicates, missing values and unreliable data quality.</li>
+              <li>No consistent analytical source of truth.</li>
+              <li>Manual reporting with limited governance and trust.</li>
+            </ul>
+
+          </article>
+
+          <article class="case-panel solution-panel">
+
+            <div class="panel-heading green-heading">
+              <span class="panel-icon">
+                <i data-lucide="circle-check-big"></i>
+              </span>
+
+              <h2>The Solution</h2>
+            </div>
+
+            <ul class="case-list green-list">
+              <li>Centralised lakehouse using medallion architecture.</li>
+              <li>Automated data quality validation and monitoring.</li>
+              <li>Curated analytical datasets and semantic models.</li>
+              <li>BigQuery publishing for downstream analytics.</li>
+            </ul>
+
+          </article>
+
+          <article class="case-panel contribution-panel">
+
+            <div class="panel-heading blue-heading">
+              <span class="panel-icon">
+                <i data-lucide="code-xml"></i>
+              </span>
+
+              <h2>What I Personally Built</h2>
+            </div>
+
+            <div class="contribution-columns">
+
+              <ul class="case-list blue-list">
+                <li>End-to-end ingestion pipeline using PySpark.</li>
+                <li>Data validation rules and quality controls.</li>
+                <li>Bronze, Silver and Gold transformations.</li>
+              </ul>
+
+              <ul class="case-list blue-list">
+                <li>Unity Catalog governance and access controls.</li>
+                <li>Workflow orchestration using Databricks Jobs.</li>
+                <li>Curated BigQuery publishing workflows.</li>
+              </ul>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STACK, PIPELINE, OUTCOMES -->
+    <section class="case-section compact-section">
+      <div class="container">
+
+        <div class="bottom-grid">
+
+          <article class="case-panel stack-panel">
+
+            <div class="panel-heading">
+              <span class="panel-icon">
+                <i data-lucide="layers"></i>
+              </span>
+
+              <h2>Technology Stack</h2>
+            </div>
+
+            <div class="technology-grid">
+
+              <span>
+                <i data-lucide="code-2"></i>
+                Python
+              </span>
+
+              <span>
+                <i data-lucide="sparkles"></i>
+                PySpark
+              </span>
+
+              <span>
+                <i data-lucide="database"></i>
+                Spark SQL
+              </span>
+
+              <span>
+                <i data-lucide="boxes"></i>
+                Databricks
+              </span>
+
+              <span>
+                <i data-lucide="triangle"></i>
+                Delta Lake
+              </span>
+
+              <span>
+                <i data-lucide="shield"></i>
+                Unity Catalog
+              </span>
+
+              <span>
+                <i data-lucide="chart-no-axes-combined"></i>
+                BigQuery
+              </span>
+
+              <span>
+                <i data-lucide="activity"></i>
+                Monitoring
+              </span>
+
+            </div>
+
+          </article>
+
+          <article class="case-panel pipeline-panel">
+
+            <div class="panel-heading">
+              <span class="panel-icon">
+                <i data-lucide="workflow"></i>
+              </span>
+
+              <h2>Architecture and Pipeline Flow</h2>
+            </div>
+
+            <div class="pipeline-steps">
+
+              <div class="pipeline-step">
+                <span>01</span>
+                <h3>Ingest</h3>
+                <p>Land source data into the Bronze layer.</p>
+              </div>
+
+              <div class="pipeline-connector"></div>
+
+              <div class="pipeline-step">
+                <span>02</span>
+                <h3>Validate</h3>
+                <p>Apply schema, completeness and quality checks.</p>
+              </div>
+
+              <div class="pipeline-connector"></div>
+
+              <div class="pipeline-step">
+                <span>03</span>
+                <h3>Transform</h3>
+                <p>Clean and standardise records in Silver.</p>
+              </div>
+
+              <div class="pipeline-connector"></div>
+
+              <div class="pipeline-step">
+                <span>04</span>
+                <h3>Curate</h3>
+                <p>Build analytical and business models in Gold.</p>
+              </div>
+
+              <div class="pipeline-connector purple-connector"></div>
+
+              <div class="pipeline-step purple-step">
+                <span>05</span>
+                <h3>Govern</h3>
+                <p>Apply lineage, access and catalog controls.</p>
+              </div>
+
+              <div class="pipeline-connector purple-connector"></div>
+
+              <div class="pipeline-step purple-step">
+                <span>06</span>
+                <h3>Publish</h3>
+                <p>Expose curated datasets to BigQuery.</p>
+              </div>
+
+            </div>
+
+            <div class="observability-strip">
+              <i data-lucide="activity"></i>
+
+              OBSERVABILITY AND MONITORING —
+              DATA QUALITY, JOBS, COST AND PERFORMANCE
+            </div>
+
+          </article>
+
+          <article class="case-panel outcomes-panel">
+
+            <div class="panel-heading">
+              <span class="panel-icon">
+                <i data-lucide="trophy"></i>
+              </span>
+
+              <h2>Key Outcomes</h2>
+            </div>
+
+            <div class="outcome-cards">
+
+              <div class="outcome-card cyan-outcome">
+                <i data-lucide="shield-check"></i>
+
+                <h3>Reliable Ingestion</h3>
+
+                <p>
+                  More than 100,000 records processed with
+                  validation and traceability.
+                </p>
+              </div>
+
+              <div class="outcome-card purple-outcome">
+                <i data-lucide="landmark"></i>
+
+                <h3>Governed Analytics</h3>
+
+                <p>
+                  Trusted analytical data with lineage,
+                  governance and controlled access.
+                </p>
+              </div>
+
+              <div class="outcome-card orange-outcome">
+                <i data-lucide="chart-no-axes-combined"></i>
+
+                <h3>Scalable Reporting</h3>
+
+                <p>
+                  Curated datasets published for efficient,
+                  self-service analytics.
+                </p>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACTIONS -->
+    <section class="case-actions-section">
+      <div class="container case-actions">
+
+        <a
+          class="case-action-button"
+          href="../../index.html#projects"
+        >
+          <i data-lucide="arrow-left"></i>
+          Back to Projects
+        </a>
+
+        <a
+          class="case-action-button"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i data-lucide="github"></i>
+          View GitHub Repository
+        </a>
+
+        <button
+          class="case-action-button"
+          type="button"
+          onclick="window.print()"
+        >
+          <i data-lucide="download"></i>
+          Download Case Study
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+
+</body>
+</html>

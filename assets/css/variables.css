@@ -1,0 +1,46 @@
+:root {
+  --font-body: "DM Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-mono: "Space Mono", monospace;
+
+  --color-bg: #031021;
+  --color-bg-soft: #06162a;
+  --color-surface: rgba(8, 24, 45, 0.82);
+  --color-surface-strong: rgba(10, 28, 51, 0.94);
+
+  --color-text: #f5f0e7;
+  --color-text-soft: #b6c2d4;
+  --color-text-muted: #8494aa;
+
+  --color-cyan: #12d6ff;
+  --color-blue: #1677ff;
+  --color-purple: #995cff;
+  --color-orange: #ffab18;
+  --color-green: #2add8b;
+
+  --color-border: rgba(151, 179, 217, 0.22);
+  --color-border-strong: rgba(151, 179, 217, 0.4);
+
+  --header-height: 82px;
+  --container-width: 1500px;
+  --section-space: 110px;
+
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.28);
+  --transition: 220ms ease;
+}
+
+body.light-theme {
+  --color-bg: #edf5fb;
+  --color-bg-soft: #f8fbff;
+  --color-surface: rgba(255, 255, 255, 0.78);
+  --color-surface-strong: rgba(255, 255, 255, 0.95);
+
+  --color-text: #07111f;
+  --color-text-soft: #536279;
+  --color-text-muted: #6e7d91;
+
+  --color-border: rgba(23, 52, 87, 0.15);
+  --color-border-strong: rgba(23, 52, 87, 0.28);
+
+  --shadow-soft: 0 18px 45px rgba(28, 55, 89, 0.12);
+}

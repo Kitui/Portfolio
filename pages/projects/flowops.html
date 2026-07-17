@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="FlowOps real-time streaming platform case study by Paul John Kitui."
+  >
+
+  <title>FlowOps | Paul John Kitui</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/case-study.css">
+  <link rel="stylesheet" href="../../assets/css/sidebar.css"
+>
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="../../assets/js/theme.js" defer></script>
+  <script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/flowops.js" defer></script>
+  <script src="../../assets/js/sidebar.js" defer></script>
+</head>
+
+<body class="case-study-page flowops-interactive-page">
+
+  <a class="skip-link" href="#main-content">
+    Skip to content
+  </a>
+<!-- MOBILE HEADER -->
+<header class="mobile-portfolio-header">
+
+  <a
+    class="mobile-brand"
+    href="../../index.html"
+    aria-label="Paul John Kitui portfolio home"
+  >
+    <span class="mobile-brand-mark">PK</span>
+
+    <span class="mobile-brand-name">
+      PAUL JOHN KITUI
+    </span>
+  </a>
+
+  <button
+    class="sidebar-mobile-toggle"
+    id="sidebar-mobile-toggle"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="portfolio-sidebar"
+  >
+    <i data-lucide="menu"></i>
+  </button>
+
+</header>
+
+<!-- GLOBAL SIDEBAR -->
+<aside
+  class="portfolio-sidebar"
+  id="portfolio-sidebar"
+  aria-label="Portfolio navigation"
+>
+  <div class="sidebar-inner">
+
+    <div class="sidebar-identity">
+
+      <a
+        class="sidebar-brand"
+        href="../../index.html"
+        aria-label="Paul John Kitui portfolio home"
+      >
+        <span class="sidebar-brand-mark">
+          PK
+        </span>
+
+        <span class="sidebar-brand-name">
+          PAUL JOHN KITUI
+        </span>
+      </a>
+
+      <p class="sidebar-brand-role">
+        CLOUD DATA ENGINEER
+      </p>
+
+    </div>
+
+    <nav
+      class="sidebar-navigation"
+      aria-label="Main portfolio navigation"
+    >
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#home"
+        data-tooltip="Home"
+      >
+        <i data-lucide="house"></i>
+
+        <span class="sidebar-nav-label">
+          HOME
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#about"
+        data-tooltip="About"
+      >
+        <i data-lucide="user-round"></i>
+
+        <span class="sidebar-nav-label">
+          ABOUT
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link active"
+        href="../../index.html#projects"
+        data-tooltip="Projects"
+      >
+        <i data-lucide="box"></i>
+
+        <span class="sidebar-nav-label">
+          PROJECTS
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#journey"
+        data-tooltip="Professional Evolution"
+      >
+        <i data-lucide="activity"></i>
+
+        <span class="sidebar-nav-label">
+          PROFESSIONAL EVOLUTION
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#skills"
+        data-tooltip="Skills"
+      >
+        <i data-lucide="code-2"></i>
+
+        <span class="sidebar-nav-label">
+          SKILLS
+        </span>
+      </a>
+
+      <a
+        class="sidebar-nav-link"
+        href="../../index.html#contact"
+        data-tooltip="Contact"
+      >
+        <i data-lucide="mail"></i>
+
+        <span class="sidebar-nav-label">
+          CONTACT
+        </span>
+      </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+      <button
+        class="sidebar-theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch to light theme"
+      >
+        <span class="sidebar-theme-main">
+          <i data-lucide="sun"></i>
+          <span>LIGHT MODE</span>
+        </span>
+
+        <i data-lucide="moon"></i>
+      </button>
+
+      <div class="sidebar-availability">
+
+        <div class="sidebar-availability-heading">
+          <span class="sidebar-availability-dot"></span>
+          AVAILABLE
+        </div>
+
+        <p>
+          Open to opportunities and technical collaborations.
+        </p>
+
+      </div>
+
+      <div class="sidebar-socials">
+
+        <a
+          class="sidebar-social-link"
+          href="https://github.com/kitui"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i data-lucide="github"></i>
+        </a>
+
+        <a
+          class="sidebar-social-link"
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i data-lucide="linkedin"></i>
+        </a>
+
+        <a
+          class="sidebar-social-link"
+          href="mailto:paulkitui@gmail.com"
+          aria-label="Email"
+        >
+          <i data-lucide="mail"></i>
+        </a>
+
+      </div>
+
+      <div class="sidebar-copyright">
+        <p>© 2026 Paul John Kitui</p>
+        <p>All rights reserved.</p>
+      </div>
+
+    </div>
+
+  </div>
+</aside>
+
+<div
+  class="sidebar-backdrop"
+  id="sidebar-backdrop"
+  aria-hidden="true"
+></div>
+
+<div class="page-content"></div>
+  <main id="main-content" class="case-study-main">
+
+    <!-- INTRODUCTION -->
+    <section class="flowops-intro">
+      <div class="case-grid-background" aria-hidden="true"></div>
+
+      <div class="container">
+
+        <div class="flowops-intro-inner">
+
+          <p class="case-eyebrow flowops-eyebrow">
+            CASE STUDY
+            <span>/</span>
+            STREAMING PLATFORM
+          </p>
+
+          <h1>FlowOps</h1>
+
+          <p class="flowops-intro-description">
+            A real-time engineering intelligence platform that transforms
+            GitHub delivery events into actionable operational insight.
+          </p>
+
+          <div class="case-meta">
+
+            <span class="case-status flowops-status">
+              <span class="status-dot"></span>
+              COMPLETED
+            </span>
+
+            <span class="meta-item">
+              <span class="meta-dot purple-dot"></span>
+              Google Cloud
+            </span>
+
+            <span class="meta-item">
+              <span class="meta-dot purple-dot"></span>
+              Pub/Sub
+            </span>
+
+            <span class="meta-item">
+              <span class="meta-dot purple-dot"></span>
+              Dataflow
+            </span>
+
+            <span class="meta-item">
+              <span class="meta-dot purple-dot"></span>
+              BigQuery
+            </span>
+
+          </div>
+
+          <p class="flowops-intro-instruction">
+            Select sections from the case-study navigator to build the
+            project story below.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CASE STUDY -->
+    <section class="flowops-explorer">
+      <div class="container flowops-explorer-layout">
+
+        <!-- NAVIGATION -->
+        <aside class="flowops-section-navigation">
+
+          <div class="explorer-navigation-heading">
+            <span>CASE STUDY NAVIGATOR</span>
+
+            <strong id="visible-section-count">
+              0 SECTIONS OPEN
+            </strong>
+          </div>
+
+          <div
+            class="flowops-navigation-list"
+            role="group"
+            aria-label="FlowOps case study sections"
+          >
+
+            <button
+              class="flowops-nav-button"
+              type="button"
+              data-section-toggle="metrics"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Platform Metrics</span>
+              <span class="nav-section-number">01</span>
+            </button>
+
+            <button
+              class="flowops-nav-button"
+              type="button"
+              data-section-toggle="overview"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Project Overview</span>
+              <span class="nav-section-number">02</span>
+            </button>
+
+            <button
+              class="flowops-nav-button"
+              type="button"
+              data-section-toggle="architecture"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Architecture Overview</span>
+              <span class="nav-section-number">03</span>
+            </button>
+
+            <button
+              class="flowops-nav-button"
+              type="button"
+              data-section-toggle="problem"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>The Problem</span>
+              <span class="nav-section-number">04</span>
+            </button>
+
+            <button
+              class="flowops-nav-button"
+              type="button"
+              data-section-toggle="solution"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>The Solution</span>
+              <span class="nav-section-number">05</span>
+            </button>
+
+            <button
+              class="flowops-nav-button"
+              type="button"
+              data-section-toggle="ownership"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>What I Built</span>
+              <span class="nav-section-number">06</span>
+            </button>
+
+            <button
+              class="flowops-nav-button"
+              type="button"
+              data-section-toggle="stack"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Technology Stack</span>
+              <span class="nav-section-number">07</span>
+            </button>
+
+            <button
+              class="flowops-nav-button"
+              type="button"
+              data-section-toggle="pipeline"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Pipeline Flow</span>
+              <span class="nav-section-number">08</span>
+            </button>
+
+            <button
+              class="flowops-nav-button"
+              type="button"
+              data-section-toggle="outcomes"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Key Outcomes</span>
+              <span class="nav-section-number">09</span>
+            </button>
+
+          </div>
+
+          <div class="flowops-navigation-actions">
+
+            <button
+              id="show-all-flowops"
+              class="flowops-navigation-action"
+              type="button"
+            >
+              <i data-lucide="layout-grid"></i>
+              Show All
+            </button>
+
+            <button
+              id="hide-all-flowops"
+              class="flowops-navigation-action"
+              type="button"
+            >
+              <i data-lucide="layers-2"></i>
+              Hide All
+            </button>
+
+          </div>
+
+        </aside>
+
+        <!-- CONTENT BOARD -->
+        <div class="flowops-content-board" id="flowops-content-board">
+
+          <div class="flowops-empty-state" id="flowops-empty-state">
+            <div class="empty-state-symbol">
+              <i data-lucide="mouse-pointer-click"></i>
+            </div>
+
+            <h2>Build the FlowOps case study</h2>
+
+            <p>
+              Select one or more sections from the navigator.
+              Every selected card will fly into its assigned position.
+            </p>
+          </div>
+
+          <!-- METRICS -->
+          <section
+            class="flowops-board-section metrics-board-section"
+            data-board-section="metrics"
+            hidden
+          >
+            <div class="board-section-heading">
+              <span>01</span>
+              <h2>Platform Metrics</h2>
+            </div>
+
+            <div class="flowops-metric-grid">
+
+              <article class="flowops-metric-card">
+                <div class="flowops-metric-icon purple">
+                  <i data-lucide="zap"></i>
+                </div>
+
+                <h3>Near Real-Time</h3>
+                <strong>Event Processing</strong>
+
+                <p>
+                  GitHub activity moves from webhook ingestion
+                  to analytical storage within seconds.
+                </p>
+              </article>
+
+              <article class="flowops-metric-card">
+                <div class="flowops-metric-icon blue">
+                  <i data-lucide="cloud-cog"></i>
+                </div>
+
+                <h3>Serverless</h3>
+                <strong>GCP Architecture</strong>
+
+                <p>
+                  Managed services scale with demand while reducing
+                  infrastructure administration.
+                </p>
+              </article>
+
+              <article class="flowops-metric-card">
+                <div class="flowops-metric-icon green">
+                  <i data-lucide="shield-check"></i>
+                </div>
+
+                <h3>Reliable</h3>
+                <strong>Event Delivery</strong>
+
+                <p>
+                  Durable messaging and dead-letter handling protect
+                  the processing workflow.
+                </p>
+              </article>
+
+              <article class="flowops-metric-card">
+                <div class="flowops-metric-icon orange">
+                  <i data-lucide="chart-no-axes-combined"></i>
+                </div>
+
+                <h3>Actionable</h3>
+                <strong>Engineering Insights</strong>
+
+                <p>
+                  Delivery activity is transformed into useful
+                  operational and workflow information.
+                </p>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- OVERVIEW -->
+          <section
+            class="flowops-board-section wide-board-section"
+            data-board-section="overview"
+            hidden
+          >
+            <div class="board-section-heading">
+              <span>02</span>
+              <h2>Project Overview</h2>
+            </div>
+
+            <div class="overview-board-layout">
+
+              <div class="overview-board-copy">
+
+                <p>
+                  FlowOps is an event-driven cloud data platform that
+                  captures, processes and analyses GitHub activity to
+                  provide visibility into engineering workflows.
+                </p>
+
+                <p>
+                  Authenticated webhook events are published to Pub/Sub,
+                  transformed with Dataflow and stored in BigQuery for
+                  operational analysis.
+                </p>
+
+                <p>
+                  The system is built around managed Google Cloud
+                  services to provide scalable and low-maintenance
+                  event processing.
+                </p>
+
+              </div>
+
+              <div class="overview-board-features">
+
+                <span>
+                  <i data-lucide="radio-tower"></i>
+                  Event-driven architecture
+                </span>
+
+                <span>
+                  <i data-lucide="clock-3"></i>
+                  Near-real-time processing
+                </span>
+
+                <span>
+                  <i data-lucide="chart-pie"></i>
+                  Operational analytics
+                </span>
+
+                <span>
+                  <i data-lucide="activity"></i>
+                  Monitoring and validation
+                </span>
+
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ARCHITECTURE -->
+          <section
+            class="flowops-board-section wide-board-section"
+            data-board-section="architecture"
+            hidden
+          >
+            <div class="board-section-heading">
+              <span>03</span>
+              <h2>Architecture Overview</h2>
+            </div>
+
+            <div class="interactive-architecture">
+
+              <div class="architecture-event-node" data-flow-node="0">
+                <div class="architecture-node-icon">
+                  <i data-lucide="github"></i>
+                </div>
+                <h3>GitHub Events</h3>
+              </div>
+
+              <div class="architecture-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="architecture-event-node" data-flow-node="1">
+                <div class="architecture-node-icon purple">
+                  <i data-lucide="webhook"></i>
+                </div>
+                <h3>Webhook Receiver</h3>
+              </div>
+
+              <div class="architecture-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="architecture-event-node" data-flow-node="2">
+                <div class="architecture-node-icon blue">
+                  <i data-lucide="radio-tower"></i>
+                </div>
+                <h3>Pub/Sub</h3>
+              </div>
+
+              <div class="architecture-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="architecture-event-node" data-flow-node="3">
+                <div class="architecture-node-icon blue">
+                  <i data-lucide="network"></i>
+                </div>
+                <h3>Dataflow</h3>
+              </div>
+
+              <div class="architecture-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="architecture-event-node" data-flow-node="4">
+                <div class="architecture-node-icon cyan">
+                  <i data-lucide="database"></i>
+                </div>
+                <h3>BigQuery</h3>
+              </div>
+
+              <div class="architecture-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="architecture-event-node" data-flow-node="5">
+                <div class="architecture-node-icon cyan">
+                  <i data-lucide="bar-chart-3"></i>
+                </div>
+                <h3>Dashboards</h3>
+              </div>
+
+            </div>
+
+            <div class="architecture-dead-letter">
+              <i data-lucide="triangle-alert"></i>
+
+              <div>
+                <strong>Dead-Letter Topic</strong>
+                <p>
+                  Failed events are isolated for inspection
+                  and controlled reprocessing.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- PROBLEM -->
+          <section
+            class="flowops-board-section standard-board-section problem-board-card"
+            data-board-section="problem"
+            hidden
+          >
+            <div class="board-section-heading red">
+              <span>04</span>
+              <h2>The Problem</h2>
+            </div>
+
+            <ul class="flowops-board-list red">
+              <li>Limited real-time visibility into delivery activity.</li>
+              <li>Manual reporting was slow and inconsistent.</li>
+              <li>No central view of event processing health.</li>
+              <li>Bottlenecks were difficult to identify quickly.</li>
+            </ul>
+          </section>
+
+          <!-- SOLUTION -->
+          <section
+            class="flowops-board-section standard-board-section solution-board-card"
+            data-board-section="solution"
+            hidden
+          >
+            <div class="board-section-heading green">
+              <span>05</span>
+              <h2>The Solution</h2>
+            </div>
+
+            <ul class="flowops-board-list green">
+              <li>Secure webhook ingestion through Cloud Run.</li>
+              <li>Event streaming with Pub/Sub and Dataflow.</li>
+              <li>Centralised analytical storage in BigQuery.</li>
+              <li>Operational monitoring and reporting.</li>
+            </ul>
+          </section>
+
+          <!-- OWNERSHIP -->
+          <section
+            class="flowops-board-section wide-board-section"
+            data-board-section="ownership"
+            hidden
+          >
+            <div class="board-section-heading blue">
+              <span>06</span>
+              <h2>What I Personally Built</h2>
+            </div>
+
+            <div class="ownership-board-grid">
+
+              <ul class="flowops-board-list blue">
+                <li>FastAPI webhook receiver and signature validation.</li>
+                <li>Pub/Sub topics, subscriptions and dead-letter handling.</li>
+                <li>Dataflow transformation and enrichment pipeline.</li>
+              </ul>
+
+              <ul class="flowops-board-list blue">
+                <li>BigQuery analytical tables and event models.</li>
+                <li>Cloud logging and operational monitoring.</li>
+                <li>End-to-end configuration, deployment and testing.</li>
+              </ul>
+
+            </div>
+          </section>
+
+          <!-- STACK -->
+          <section
+            class="flowops-board-section standard-board-section"
+            data-board-section="stack"
+            hidden
+          >
+            <div class="board-section-heading">
+              <span>07</span>
+              <h2>Technology Stack</h2>
+            </div>
+
+            <div class="flowops-stack-grid">
+
+              <span><i data-lucide="code-2"></i>Python</span>
+              <span><i data-lucide="fast-forward"></i>FastAPI</span>
+              <span><i data-lucide="cloud"></i>Cloud Run</span>
+              <span><i data-lucide="radio-tower"></i>Pub/Sub</span>
+              <span><i data-lucide="network"></i>Dataflow</span>
+              <span><i data-lucide="database"></i>BigQuery</span>
+              <span><i data-lucide="scroll-text"></i>Cloud Logging</span>
+              <span><i data-lucide="activity"></i>Monitoring</span>
+              <span><i data-lucide="key-round"></i>Secret Manager</span>
+              <span><i data-lucide="github"></i>GitHub Webhooks</span>
+
+            </div>
+          </section>
+
+          <!-- PIPELINE -->
+          <section
+            class="flowops-board-section wide-board-section"
+            data-board-section="pipeline"
+            hidden
+          >
+            <div class="board-section-heading">
+              <span>08</span>
+              <h2>Pipeline Flow</h2>
+            </div>
+
+            <div class="flowops-pipeline-board">
+
+              <div class="pipeline-board-step" data-pipeline-node="0">
+                <span>01</span>
+                <h3>Receive</h3>
+                <p>Authenticate incoming GitHub events.</p>
+              </div>
+
+              <div class="pipeline-board-connector"></div>
+
+              <div class="pipeline-board-step" data-pipeline-node="1">
+                <span>02</span>
+                <h3>Publish</h3>
+                <p>Send validated events into Pub/Sub.</p>
+              </div>
+
+              <div class="pipeline-board-connector"></div>
+
+              <div class="pipeline-board-step" data-pipeline-node="2">
+                <span>03</span>
+                <h3>Stream</h3>
+                <p>Transform events through Dataflow.</p>
+              </div>
+
+              <div class="pipeline-board-connector"></div>
+
+              <div class="pipeline-board-step" data-pipeline-node="3">
+                <span>04</span>
+                <h3>Store</h3>
+                <p>Write processed records to BigQuery.</p>
+              </div>
+
+              <div class="pipeline-board-connector"></div>
+
+              <div class="pipeline-board-step" data-pipeline-node="4">
+                <span>05</span>
+                <h3>Analyse</h3>
+                <p>Generate operational metrics.</p>
+              </div>
+
+              <div class="pipeline-board-connector"></div>
+
+              <div class="pipeline-board-step" data-pipeline-node="5">
+                <span>06</span>
+                <h3>Visualise</h3>
+                <p>Present insights through dashboards.</p>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- OUTCOMES -->
+          <section
+            class="flowops-board-section standard-board-section"
+            data-board-section="outcomes"
+            hidden
+          >
+            <div class="board-section-heading orange">
+              <span>09</span>
+              <h2>Key Outcomes</h2>
+            </div>
+
+            <div class="flowops-outcome-list">
+
+              <div>
+                <i data-lucide="clock-3"></i>
+                <span>Near-real-time delivery visibility</span>
+              </div>
+
+              <div>
+                <i data-lucide="chart-no-axes-combined"></i>
+                <span>Structured operational intelligence</span>
+              </div>
+
+              <div>
+                <i data-lucide="shield-check"></i>
+                <span>Reliable event handling</span>
+              </div>
+
+              <div>
+                <i data-lucide="badge-dollar-sign"></i>
+                <span>Managed, low-maintenance cloud design</span>
+              </div>
+
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOTTOM ACTIONS -->
+    <section class="case-actions-section">
+      <div class="container case-actions">
+
+        <a
+          class="case-action-button"
+          href="../../index.html#projects"
+        >
+          <i data-lucide="arrow-left"></i>
+          Back to Projects
+        </a>
+
+        <a
+          class="case-action-button"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i data-lucide="github"></i>
+          View GitHub Repository
+        </a>
+
+        <button
+          class="case-action-button"
+          type="button"
+          onclick="window.print()"
+        >
+          <i data-lucide="download"></i>
+          Download Case Study
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+ </div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+@media (max-width: 1280px) {
+  .container {
+    width: min(calc(100% - 72px), var(--container-width));
+  }
+
+  .primary-navigation {
+    gap: 23px;
+    margin-right: 30px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .hero-layout,
+  .about-layout {
+    gap: 40px;
+  }
+
+  .orbital-art {
+    width: 520px;
+    height: 520px;
+  }
+
+  .social-rail {
+    right: 8px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .primary-navigation {
+    position: fixed;
+    inset: var(--header-height) 0 auto;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 18px 34px 30px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-soft);
+  }
+
+  .primary-navigation.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 17px 0;
+  }
+
+  .nav-link.active::after {
+    bottom: 8px;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  .theme-toggle {
+    margin-left: 12px;
+  }
+
+  .hero-layout,
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding-top: 45px;
+  }
+
+  .hero-visual {
+    min-height: 520px;
+  }
+
+  .orbital-art {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .about-content {
+    padding-top: 0;
+  }
+
+  .social-rail {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    padding: 28px 0;
+    transform: none;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --header-height: 72px;
+    --section-space: 80px;
+  }
+
+  .container {
+    width: min(calc(100% - 36px), var(--container-width));
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  .brand-mark {
+    width: 43px;
+    height: 43px;
+  }
+
+  .theme-toggle {
+    width: 45px;
+    min-width: 45px;
+    padding: 0;
+  }
+
+  .theme-toggle span {
+    display: none;
+  }
+
+  .hero-layout {
+    padding-top: 42px;
+    padding-bottom: 100px;
+  }
+
+  .hero-name {
+    font-size: 67px;
+  }
+
+  .hero-heading {
+    font-size: 20px;
+    line-height: 1.55;
+  }
+
+  .hero-description {
+    font-size: 17px;
+  }
+
+  .hero-capabilities {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .capability-pill {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 14px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button,
+  .text-link {
+    width: 100%;
+  }
+
+  .text-link {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    min-height: 400px;
+  }
+
+  .orbital-art {
+    width: 390px;
+    height: 390px;
+  }
+
+  .data-bars {
+    gap: 8px;
+  }
+
+  .data-bars span,
+  .mini-bars span {
+    width: 18px;
+  }
+
+  .section-display-title {
+    font-size: 50px;
+  }
+
+  .section-summary {
+    font-size: 12px;
+  }
+
+  .capability-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-name {
+    font-size: 56px;
+  }
+
+  .hero-heading {
+    font-size: 17px;
+  }
+
+  .section-display-title {
+    font-size: 43px;
+  }
+
+  .orbital-art {
+    width: 330px;
+    height: 330px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .projects-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .featured-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .secondary-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .projects-heading h2 {
+    font-size: 48px;
+  }
+
+  .project-card-large {
+    min-height: auto;
+  }
+
+  .project-visual {
+    height: 230px;
+  }
+
+  .roadsafe-visual {
+    gap: 9px;
+    padding-inline: 20px;
+  }
+
+  .layer {
+    width: 31%;
+    font-size: 10px;
+  }
+
+  .flowops-visual {
+    padding-inline: 22px;
+  }
+
+  .event-source,
+  .event-destination {
+    width: 70px;
+    height: 70px;
+  }
+
+  .event-stream {
+    width: 40%;
+  }
+
+  .project-content {
+    padding: 27px 22px 31px;
+  }
+
+  .project-content h3 {
+    font-size: 34px;
+  }
+
+  .secondary-projects {
+    grid-template-columns: 1fr;
+  }
+}
