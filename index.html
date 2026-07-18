@@ -2373,6 +2373,8 @@
         <form
           class="contact-form"
           id="portfolio-contact-form"
+          action="https://formspree.io/f/xbdnoyqp"
+          method="POST"
           novalidate
         >
 
@@ -2390,6 +2392,18 @@
               autocomplete="off"
             >
           </div>
+
+          <input
+           type="hidden"
+           name="_replyto"
+           id="contact-reply-to"
+          >
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="New portfolio contact message"
+         >
 
           <div class="contact-field-grid">
 
@@ -2566,8 +2580,8 @@
           <p class="contact-privacy-note">
             <i data-lucide="lock-keyhole"></i>
 
-            The form opens your email application. No information
-            is stored by this website.
+             Complete the form and your message will be
+             delivered directly to my inbox.
           </p>
 
         </form>

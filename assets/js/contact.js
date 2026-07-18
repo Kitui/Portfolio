@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
     message: document.getElementById("contact-message")
   };
 
+  const replyToField = document.getElementById(
+    "contact-reply-to"
+  );
+
   const submitButton = document.getElementById(
     "contact-submit-button"
   );
@@ -50,36 +54,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function validateField(name) {
     const field = fields[name];
-    const value = field.value.trim();
 
+    if (!field) {
+      return false;
+    }
+
+    const value = field.value.trim();
     let valid = false;
 
-    if (name === "name") {
-      valid = value.length >= 2;
-    }
+    switch (name) {
+      case "name":
+        valid = value.length >= 2;
+        break;
 
-    if (name === "email") {
-      valid = isValidEmail(value);
-    }
+      case "email":
+        valid = isValidEmail(value);
+        break;
 
-    if (name === "subject") {
-      valid = value.length >= 3;
-    }
+      case "subject":
+        valid = value.length >= 3;
+        break;
 
-    if (name === "message") {
-      valid = value.length >= 10;
+      case "message":
+        valid = value.length >= 10;
+        break;
+
+      default:
+        valid = false;
     }
 
     const fieldContainer = field.closest(
       ".contact-field"
     );
 
-    fieldContainer.classList.toggle(
+    fieldContainer?.classList.toggle(
       "valid",
       valid
     );
 
-    fieldContainer.classList.toggle(
+    fieldContainer?.classList.toggle(
       "invalid",
       value.length > 0 && !valid
     );
@@ -93,6 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ).length;
   }
 
+  function formIsValid() {
+    return (
+      getValidFieldCount() ===
+      Object.keys(fields).length
+    );
+  }
+
   function updateSignal() {
     const validCount = getValidFieldCount();
 
@@ -103,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
 
-    const messages = [
+    const labels = [
       "Waiting for input",
       "Weak signal",
       "Building connection",
@@ -112,18 +132,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     signalLabel.textContent =
-      messages[validCount];
-
-    form.dataset.signalStrength =
-      String(validCount);
-
-    const allValid =
-      validCount === Object.keys(fields).length;
+      labels[validCount];
 
     submitButton.disabled =
-      !allValid || isSubmitting;
+      !formIsValid() || isSubmitting;
 
-    submitText.textContent = allValid
+    submitText.textContent = formIsValid()
       ? "Send Message"
       : "Complete Required Fields";
   }
@@ -133,65 +147,33 @@ document.addEventListener("DOMContentLoaded", () => {
       `${fields.message.value.length} / 1000`;
   }
 
-  function setSubmissionState(
-    state,
-    message = ""
-  ) {
-    form.dataset.submissionState = state;
+  function setStatus(type, message) {
+    status.className = "contact-form-status";
+
+    if (type) {
+      status.classList.add(type);
+    }
+
     status.textContent = message;
-
-    if (state === "validating") {
-      isSubmitting = true;
-      submitButton.disabled = true;
-      submitText.textContent = "Validating";
-    }
-
-    if (state === "transmitting") {
-      submitText.textContent = "Preparing Email";
-    }
-
-    if (state === "sent") {
-      submitText.textContent = "Email Prepared";
-      status.className =
-        "contact-form-status success";
-    }
-
-    if (state === "error") {
-      isSubmitting = false;
-      submitText.textContent = "Try Again";
-      submitButton.disabled = false;
-      status.className =
-        "contact-form-status error";
-    }
-
-    window.lucide?.createIcons();
   }
 
-  function buildMailtoLink() {
-    const name = fields.name.value.trim();
-    const email = fields.email.value.trim();
-    const subject = fields.subject.value.trim();
-    const message = fields.message.value.trim();
+  function setSubmitting(submitting) {
+    isSubmitting = submitting;
+    submitButton.disabled =
+      submitting || !formIsValid();
+  }
 
-    const body = [
-      `Hello Paul,`,
-      ``,
-      message,
-      ``,
-      `Regards,`,
-      name,
-      email
-    ].join("\n");
+  function resetFormState() {
+    form.reset();
 
-    const query = new URLSearchParams({
-      subject,
-      body
+    Object.values(fields).forEach((field) => {
+      field
+        .closest(".contact-field")
+        ?.classList.remove("valid", "invalid");
     });
 
-    return (
-      "mailto:paulkitui@gmail.com?" +
-      query.toString()
-    );
+    updateCharacterCount();
+    updateSignal();
   }
 
   Object.entries(fields).forEach(
@@ -204,10 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         updateSignal();
-
-        status.textContent = "";
-        status.className =
-          "contact-form-status";
+        setStatus("", "");
       });
 
       field.addEventListener("blur", () => {
@@ -216,25 +195,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const honeypot = document.getElementById(
       "company-website"
     );
 
-    if (honeypot.value.trim()) {
+    if (honeypot?.value.trim()) {
       return;
     }
 
-    const allValid =
-      getValidFieldCount() ===
-      Object.keys(fields).length;
-
-    if (!allValid) {
+    if (!formIsValid()) {
       updateSignal();
 
-      setSubmissionState(
+      setStatus(
         "error",
         "Please complete every required field correctly."
       );
@@ -242,35 +217,83 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    setSubmissionState(
-      "validating",
-      "Checking your message..."
-    );
+    replyToField.value =
+      fields.email.value.trim();
 
-    window.setTimeout(() => {
-      setSubmissionState(
-        "transmitting",
-        "Preparing your email application..."
+    setSubmitting(true);
+
+    form.dataset.submissionState = "validating";
+    submitText.textContent = "Validating";
+    setStatus("", "Checking your message...");
+
+    await new Promise((resolve) => {
+      window.setTimeout(resolve, 500);
+    });
+
+    form.dataset.submissionState = "transmitting";
+    submitText.textContent = "Transmitting";
+    setStatus("", "Sending your message...");
+
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (!response.ok) {
+        const responseData =
+          await response.json().catch(() => null);
+
+        const errorMessage =
+          responseData?.errors
+            ?.map((error) => error.message)
+            .join(", ") ||
+          "The message could not be sent.";
+
+        throw new Error(errorMessage);
+      }
+
+      form.dataset.submissionState = "sent";
+      submitText.textContent = "Message Sent";
+
+      setStatus(
+        "success",
+        "Thank you. Your message has been sent successfully."
       );
-    }, 650);
 
-    window.setTimeout(() => {
-      const mailtoLink = buildMailtoLink();
-
-      setSubmissionState(
-        "sent",
-        "Your email application should open with the message prepared."
-      );
-
-      window.location.href = mailtoLink;
+      resetFormState();
 
       window.setTimeout(() => {
-        isSubmitting = false;
-        submitButton.disabled = false;
         submitText.textContent =
-          "Send Message";
-      }, 1500);
-    }, 1400);
+          "Complete Required Fields";
+
+        form.dataset.submissionState = "";
+        setSubmitting(false);
+        updateSignal();
+      }, 2500);
+    } catch (error) {
+      console.error(
+        "Contact form submission failed:",
+        error
+      );
+
+      form.dataset.submissionState = "error";
+      submitText.textContent = "Try Again";
+
+      setStatus(
+        "error",
+        error.message ||
+          "Something went wrong. Please try again."
+      );
+
+      setSubmitting(false);
+      updateSignal();
+    }
   });
 
   updateCharacterCount();
