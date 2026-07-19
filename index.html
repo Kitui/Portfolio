@@ -16,10 +16,10 @@
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/sections.css?v=projects-2">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <link rel="stylesheet" href="assets/css/sidebar.css"
->
+  <link rel="stylesheet" href="assets/css/sidebar.css">
+  <link rel="stylesheet" href="assets/css/portfolio-transitions.css">
 
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="assets/js/theme.js" defer></script>
@@ -31,6 +31,7 @@
   <script src="assets/js/about.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/sidebar.js" defer></script>
+  <script src="assets/js/portfolio-router.js" defer></script>
   
   
 </head>
@@ -43,7 +44,7 @@
 
   <a
     class="mobile-brand"
-    href="#home"
+    href="#home" data-page-link="home"
     aria-label="Paul John Kitui home"
   >
     <span class="pk-logo pk-logo-mobile" aria-hidden="true">
@@ -78,7 +79,7 @@
 
       <a
         class="sidebar-brand"
-        href="#home"
+        href="#home" data-page-link="home"
         aria-label="Paul John Kitui home"
       >
         <span class="pk-logo" aria-hidden="true">
@@ -105,7 +106,7 @@
 
       <a
         class="sidebar-nav-link active"
-        href="#home"
+        href="#home" data-page-link="home"
         data-tooltip="Home"
       >
         <i data-lucide="house"></i>
@@ -116,7 +117,7 @@
 
       <a
         class="sidebar-nav-link"
-        href="#about"
+        href="#about" data-page-link="about"
         data-tooltip="About"
       >
         <i data-lucide="user-round"></i>
@@ -127,7 +128,7 @@
 
       <a
         class="sidebar-nav-link"
-        href="#projects"
+        href="#projects" data-page-link="projects"
         data-tooltip="Projects"
       >
         <i data-lucide="box"></i>
@@ -138,7 +139,7 @@
 
       <a
         class="sidebar-nav-link"
-        href="#journey"
+        href="#journey" data-page-link="journey"
         data-tooltip="Professional Evolution"
       >
         <i data-lucide="activity"></i>
@@ -149,7 +150,7 @@
 
       <a
         class="sidebar-nav-link"
-        href="#skills"
+        href="#skills" data-page-link="skills"
         data-tooltip="Skills"
       >
         <i data-lucide="code-2"></i>
@@ -160,7 +161,7 @@
 
       <a
         class="sidebar-nav-link"
-        href="#contact"
+        href="#contact" data-page-link="contact"
         data-tooltip="Contact"
       >
         <i data-lucide="mail"></i>
@@ -270,10 +271,10 @@
 ></div>
 
 <div class="page-content">
-  <main id="main-content">
+  <main id="main-content" class="portfolio-stage">
 
 <!-- MINIMAL HERO -->
-<section class="minimal-hero section" id="home">
+<section class="minimal-hero section portfolio-page active" id="home" data-page="home">
   <div class="minimal-hero-grid" aria-hidden="true"></div>
   <div class="minimal-hero-glow" aria-hidden="true"></div>
 
@@ -388,7 +389,18 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i data-lucide="github"></i>
+        <svg
+  viewBox="0 0 24 24"
+  width="22"
+  height="22"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    fill="currentColor"
+    d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.13c-3.18.7-3.85-1.35-3.85-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.54-.29-5.21-1.27-5.21-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.11 1.17A10.8 10.8 0 0 1 12 6.01c.96 0 1.92.13 2.82.38 2.15-1.48 3.11-1.17 3.11-1.17.62 1.58.23 2.74.11 3.03.73.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.23 5.63.41.35.77 1.05.77 2.12v3.08c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"
+  />
+</svg>
         View on GitHub
         <i data-lucide="arrow-up-right"></i>
       </a>
@@ -404,7 +416,7 @@
 </section>
 
     <!-- ABOUT -->
-<section class="about-value-section section" id="about">
+<section class="about-value-section section portfolio-page" id="about" data-page="about" hidden>
   <div class="about-value-grid-background" aria-hidden="true"></div>
 
   <div class="container about-value-container">
@@ -744,233 +756,477 @@
 </section>
 
     <!-- FEATURED PROJECTS -->
-    <section class="projects section" id="projects">
-      <div class="section-grid" aria-hidden="true"></div>
+<section class="projects section portfolio-page" id="projects" data-page="projects" hidden>
+  <div class="projects-grid-background" aria-hidden="true"></div>
 
-      <div class="container">
-        <div class="projects-heading reveal">
-          <div>
-            <div class="section-kicker">
-              <span class="section-number">03</span>
-              <span class="section-divider"></span>
-              <span>FEATURED WORK</span>
+  <div class="container projects-container">
+    <header class="projects-heading reveal">
+      <div class="projects-heading-copy">
+        <div class="section-kicker">
+          <span class="section-number">03</span>
+          <span class="section-divider"></span>
+          <span>FEATURED WORK</span>
+        </div>
+
+        <h2>Selected Projects</h2>
+
+        <p>
+          End-to-end solutions that solve real business problems using
+          cloud, data engineering, streaming and applied AI.
+        </p>
+      </div>
+    </header>
+
+    <!-- FEATURED ROW -->
+    <div class="featured-projects-grid">
+
+      <!-- ROADSAFE -->
+      <article class="showcase-project-card roadsafe-project reveal">
+        <div class="project-accent-line"></div>
+
+        <div class="featured-project-body">
+          <div class="featured-project-illustration roadsafe-illustration">
+            <div class="medallion-platform">
+              <div class="medallion-top">
+                <span class="semantic-label">SEMANTIC</span>
+
+                <div class="semantic-cube">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="medallion-stage gold-stage">
+                <span>GOLD</span>
+                <div class="stage-database"></div>
+              </div>
+
+              <div class="medallion-stage silver-stage">
+                <span>SILVER</span>
+                <div class="stage-database"></div>
+              </div>
+
+              <div class="medallion-stage bronze-stage">
+                <span>BRONZE</span>
+                <div class="stage-database"></div>
+              </div>
+
+              <div class="platform-base">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
-
-            <h2>Engineering platforms built around real business problems.</h2>
           </div>
 
-          <p>
-            A portfolio of cloud data, streaming, analytics and applied AI systems,
-            designed from architecture through implementation, deployment and monitoring.
-          </p>
-        </div>
+          <div class="featured-project-copy">
+            <div class="project-card-topline">
+              <span class="project-category cyan-category">
+                DATA ENGINEERING
+              </span>
 
-        <div class="featured-projects">
-          <article class="project-card project-card-large reveal">
-            <div class="project-number">01</div>
-
-            <div class="project-visual roadsafe-visual" aria-hidden="true">
-              <div class="layer bronze">BRONZE</div>
-              <div class="layer silver">SILVER</div>
-              <div class="layer gold">GOLD</div>
-              <div class="pipeline-line"></div>
-              <span class="data-node node-one"></span>
-              <span class="data-node node-two"></span>
-              <span class="data-node node-three"></span>
+              <span class="project-status completed">
+                <span></span>
+                COMPLETED
+              </span>
             </div>
 
-            <div class="project-content">
-              <div class="project-meta">
-                <span class="project-status completed">COMPLETED</span>
-                <span>CLOUD DATA ENGINEERING</span>
-              </div>
-
-              <h3>RoadSafe Lakehouse</h3>
-
-              <p>
-                An enterprise-style batch data platform that ingests, validates,
-                transforms and curates over 100,000 accident records using a governed
-                medallion architecture.
-              </p>
-
-              <ul class="project-highlights">
-                <li>Automated Bronze, Silver, Gold and Semantic layers</li>
-                <li>Data quality, audit logging and Unity Catalog governance</li>
-                <li>Curated publishing to Google BigQuery</li>
-              </ul>
-
-              <div class="project-stack">
-                <span>Databricks</span>
-                <span>PySpark</span>
-                <span>Delta Lake</span>
-                <span>BigQuery</span>
-              </div>
-
-              <div class="project-actions">
-                <a href="pages/projects/roadsafe.html" class="project-link">
-                  View Case Study
-                  <i data-lucide="arrow-right"></i>
-                </a>
-
-                <a href="#" class="project-icon-link" aria-label="RoadSafe GitHub repository">
-                  <i data-lucide="github"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card project-card-large reveal">
-            <div class="project-number">02</div>
-
-            <div class="project-visual flowops-visual" aria-hidden="true">
-              <div class="event-source">
-                <i data-lucide="github"></i>
-              </div>
-              <div class="event-stream">
-                <span></span><span></span><span></span><span></span><span></span>
-              </div>
-              <div class="event-destination">
-                <i data-lucide="database"></i>
-              </div>
-            </div>
-
-            <div class="project-content">
-              <div class="project-meta">
-                <span class="project-status completed">COMPLETED</span>
-                <span>REAL-TIME STREAMING</span>
-              </div>
-
-              <h3>FlowOps</h3>
-
-              <p>
-                An event-driven streaming platform that captures GitHub delivery activity
-                and transforms it into near-real-time engineering and operational intelligence.
-              </p>
-
-              <ul class="project-highlights">
-                <li>Secure GitHub webhook ingestion through Cloud Run</li>
-                <li>Event streaming with Pub/Sub and Dataflow</li>
-                <li>Near-real-time storage and analysis in BigQuery</li>
-              </ul>
-
-              <div class="project-stack">
-                <span>Cloud Run</span>
-                <span>Pub/Sub</span>
-                <span>Dataflow</span>
-                <span>BigQuery</span>
-              </div>
-
-              <div class="project-actions">
-                <a href="pages/projects/flowops.html" class="project-link">
-                  View Case Study
-                  <i data-lucide="arrow-right"></i>
-                </a>
-
-                <a href="#" class="project-icon-link" aria-label="FlowOps GitHub repository">
-                  <i data-lucide="github"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="secondary-projects">
-          <article class="project-card project-card-small reveal">
-            <div class="small-project-top">
-              <span class="small-project-number">03</span>
-              <div class="card-icon orange"><i data-lucide="brain-circuit"></i></div>
-            </div>
-
-            <div class="project-meta">
-              <span class="project-status completed">COMPLETED</span>
-              <span>APPLIED AI</span>
-            </div>
-
-            <h3>AI Bursary Allocation</h3>
+            <h3>RoadSafe Lakehouse</h3>
 
             <p>
-              Explainable decision-support platform combining machine learning,
-              reinforcement learning and transparent allocation recommendations.
+              Built a modern lakehouse using Databricks and Delta Lake
+              on Google Cloud, implementing medallion architecture,
+              automated pipelines, governance and executive analytics.
             </p>
 
-            <div class="project-stack">
-              <span>Python</span>
-              <span>XGBoost</span>
-              <span>SHAP</span>
-              <span>GCP</span>
+            <ul class="project-feature-list roadsafe-list">
+              <li>Bronze, Silver, Gold and Semantic data layers</li>
+              <li>Automated quality checks and observability</li>
+              <li>Unity Catalog governance and lineage</li>
+              <li>Curated analytical publishing to BigQuery</li>
+            </ul>
+
+            <div class="project-technologies">
+              <span>Databricks</span>
+              <span>PySpark</span>
+              <span>Delta Lake</span>
+              <span>BigQuery</span>
             </div>
-
-            <a href="pages/projects/bursary-ai.html" class="project-link">
-              View Project
-              <i data-lucide="arrow-right"></i>
-            </a>
-          </article>
-
-          <article class="project-card project-card-small reveal">
-            <div class="small-project-top">
-              <span class="small-project-number">04</span>
-              <div class="card-icon purple"><i data-lucide="users"></i></div>
-            </div>
-
-            <div class="project-meta">
-              <span class="project-status development">IN DEVELOPMENT</span>
-              <span>CUSTOMER INTELLIGENCE</span>
-            </div>
-
-            <h3>Customer IQ</h3>
-
-            <p>
-              Customer intelligence platform for segmentation, customer value,
-              campaign analytics and business recommendations.
-            </p>
-
-            <div class="project-stack">
-              <span>Python</span>
-              <span>Analytics</span>
-              <span>Machine Learning</span>
-            </div>
-
-            <a href="pages/projects/customer-iq.html" class="project-link">
-              View Project
-              <i data-lucide="arrow-right"></i>
-            </a>
-          </article>
-
-          <article class="project-card project-card-small reveal">
-            <div class="small-project-top">
-              <span class="small-project-number">05</span>
-              <div class="card-icon green"><i data-lucide="shield-check"></i></div>
-            </div>
-
-            <div class="project-meta">
-              <span class="project-status development">IN DEVELOPMENT</span>
-              <span>DATA RELIABILITY</span>
-            </div>
-
-            <h3>Data Reliability Copilot</h3>
-
-            <p>
-              AI-assisted platform for dataset profiling, risk detection, data-quality
-              recommendations and machine-learning readiness assessment.
-            </p>
-
-            <div class="project-stack">
-              <span>FastAPI</span>
-              <span>Data Quality</span>
-              <span>LLMs</span>
-            </div>
-
-            <a href="pages/projects/data-reliability.html" class="project-link">
-              View Project
-              <i data-lucide="arrow-right"></i>
-            </a>
-          </article>
+          </div>
         </div>
-      </div>
-    </section>
+
+        <footer class="featured-project-footer">
+          <a
+            class="case-study-link cyan-link"
+            href="pages/projects/roadsafe.html"
+          >
+            View Case Study
+            <i data-lucide="arrow-right"></i>
+          </a>
+
+          <a
+            class="project-github-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="RoadSafe Lakehouse GitHub repository"
+          >
+            <svg
+  viewBox="0 0 24 24"
+  width="22"
+  height="22"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    fill="currentColor"
+    d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.13c-3.18.7-3.85-1.35-3.85-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.54-.29-5.21-1.27-5.21-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.11 1.17A10.8 10.8 0 0 1 12 6.01c.96 0 1.92.13 2.82.38 2.15-1.48 3.11-1.17 3.11-1.17.62 1.58.23 2.74.11 3.03.73.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.23 5.63.41.35.77 1.05.77 2.12v3.08c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"
+  />
+</svg>
+          </a>
+
+          <span class="project-footer-status">
+            <span class="status-light green"></span>
+            COMPLETED
+          </span>
+        </footer>
+      </article>
+
+      <!-- FLOWOPS -->
+      <article class="showcase-project-card flowops-project reveal">
+        <div class="project-accent-line"></div>
+
+        <div class="featured-project-body">
+          <div class="featured-project-illustration flowops-illustration">
+            <div class="flowops-main-flow">
+              <div class="flowops-source">
+                <div class="flowops-node github-node">
+                  <svg
+  viewBox="0 0 24 24"
+  width="22"
+  height="22"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    fill="currentColor"
+    d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.13c-3.18.7-3.85-1.35-3.85-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.54-.29-5.21-1.27-5.21-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.11 1.17A10.8 10.8 0 0 1 12 6.01c.96 0 1.92.13 2.82.38 2.15-1.48 3.11-1.17 3.11-1.17.62 1.58.23 2.74.11 3.03.73.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.23 5.63.41.35.77 1.05.77 2.12v3.08c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"
+  />
+</svg>
+                </div>
+              </div>
+
+              <div class="flowops-line">
+                <span class="flow-particle particle-one"></span>
+                <span class="flow-particle particle-two"></span>
+                <span class="flow-particle particle-three"></span>
+              </div>
+
+              <div class="flowops-hub">
+                <i data-lucide="waves"></i>
+              </div>
+
+              <div class="flowops-branches">
+                <span class="branch branch-one"></span>
+                <span class="branch branch-two"></span>
+                <span class="branch branch-three"></span>
+              </div>
+
+              <div class="flowops-destinations">
+                <div class="flowops-node destination-node">
+                  <i data-lucide="database"></i>
+                </div>
+
+                <div class="flowops-node destination-node">
+                  <i data-lucide="chart-no-axes-combined"></i>
+                </div>
+
+                <div class="flowops-node destination-node alert-node">
+                  <i data-lucide="bell"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="flowops-wave-floor">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div class="featured-project-copy">
+            <div class="project-card-topline">
+              <span class="project-category purple-category">
+                STREAMING PLATFORM
+              </span>
+
+              <span class="project-status completed">
+                <span></span>
+                COMPLETED
+              </span>
+            </div>
+
+            <h3>FlowOps</h3>
+
+            <p>
+              A real-time data engineering platform that
+              captures GitHub delivery events, processes them through
+              a serverless streaming architecture and exposes
+              operational insights in BigQuery.
+            </p>
+
+            <ul class="project-feature-list flowops-list">
+              <li>Secure GitHub webhook ingestion through Cloud Run</li>
+              <li>Pub/Sub and Dataflow event-stream processing</li>
+              <li>BigQuery analytical event storage</li>
+              <li>Monitoring, validation and dead-letter handling</li>
+            </ul>
+
+            <div class="project-technologies">
+              <span>Cloud Run</span>
+              <span>Pub/Sub</span>
+              <span>Dataflow</span>
+              <span>BigQuery</span>
+            </div>
+          </div>
+        </div>
+
+        <footer class="featured-project-footer">
+          <a
+            class="case-study-link purple-link"
+            href="pages/projects/flowops.html"
+          >
+            View Case Study
+            <i data-lucide="arrow-right"></i>
+          </a>
+
+          <a
+            class="project-github-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="FlowOps GitHub repository"
+          >
+            <svg
+  viewBox="0 0 24 24"
+  width="22"
+  height="22"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    fill="currentColor"
+    d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.13c-3.18.7-3.85-1.35-3.85-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.54-.29-5.21-1.27-5.21-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.11 1.17A10.8 10.8 0 0 1 12 6.01c.96 0 1.92.13 2.82.38 2.15-1.48 3.11-1.17 3.11-1.17.62 1.58.23 2.74.11 3.03.73.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.23 5.63.41.35.77 1.05.77 2.12v3.08c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"
+  />
+</svg>
+          </a>
+
+          <span class="project-footer-status">
+            <span class="status-light green"></span>
+            COMPLETED
+          </span>
+        </footer>
+      </article>
+    </div>
+
+    <!-- SUPPORTING PROJECTS -->
+    <div class="secondary-projects-grid">
+
+      <!-- BURSARY -->
+      <article class="compact-project-card bursary-project reveal">
+        <div class="compact-card-header">
+          <span class="compact-project-icon orange-icon">
+            <i data-lucide="brain-circuit"></i>
+          </span>
+
+          <span class="project-status completed">
+            <span></span>
+            COMPLETED
+          </span>
+
+          <span class="compact-project-category orange-text">
+            APPLIED AI
+          </span>
+        </div>
+
+        <h3>AI Bursary Allocation</h3>
+
+        <p>
+          Explainable decision-support platform using machine learning
+          and reinforcement learning to generate transparent bursary
+          allocation recommendations.
+        </p>
+
+        <div class="project-technologies compact-technologies">
+          <span>Python</span>
+          <span>XGBoost</span>
+          <span>SHAP</span>
+          <span>GCP</span>
+        </div>
+
+        <footer class="compact-project-footer">
+          <a
+            class="case-study-link orange-link"
+            href="pages/projects/bursary-ai.html"
+          >
+            View Case Study
+            <i data-lucide="arrow-right"></i>
+          </a>
+
+          <a
+            class="project-github-link"
+            href="#"
+            aria-label="AI Bursary Allocation GitHub repository"
+          >
+            <svg
+  viewBox="0 0 24 24"
+  width="22"
+  height="22"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    fill="currentColor"
+    d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.13c-3.18.7-3.85-1.35-3.85-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.54-.29-5.21-1.27-5.21-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.11 1.17A10.8 10.8 0 0 1 12 6.01c.96 0 1.92.13 2.82.38 2.15-1.48 3.11-1.17 3.11-1.17.62 1.58.23 2.74.11 3.03.73.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.23 5.63.41.35.77 1.05.77 2.12v3.08c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"
+  />
+</svg>
+          </a>
+        </footer>
+      </article>
+
+      <!-- CUSTOMERIQ -->
+      <article class="compact-project-card customer-project reveal">
+        <div class="compact-card-header">
+          <span class="compact-project-icon green-icon ciq-icon">
+            CiQ
+          </span>
+
+          <span class="project-status development">
+            <span></span>
+            IN DEVELOPMENT
+          </span>
+
+          <span class="compact-project-category cyan-text">
+            CUSTOMER INTELLIGENCE
+          </span>
+        </div>
+
+        <h3>CustomerIQ</h3>
+
+        <p>
+          Customer intelligence platform for segmentation, customer
+          lifetime value, campaign analytics, churn signals and
+          actionable business recommendations.
+        </p>
+
+        <div class="project-technologies compact-technologies">
+          <span>Python</span>
+          <span>Analytics</span>
+          <span>Machine Learning</span>
+        </div>
+
+        <footer class="compact-project-footer">
+          <a
+            class="case-study-link green-link"
+            href="pages/projects/customer-iq.html"
+          >
+            View Case Study
+            <i data-lucide="arrow-right"></i>
+          </a>
+
+          <a
+            class="project-github-link"
+            href="#"
+            aria-label="CustomerIQ GitHub repository"
+          >
+            <svg
+  viewBox="0 0 24 24"
+  width="22"
+  height="22"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    fill="currentColor"
+    d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.13c-3.18.7-3.85-1.35-3.85-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.54-.29-5.21-1.27-5.21-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.11 1.17A10.8 10.8 0 0 1 12 6.01c.96 0 1.92.13 2.82.38 2.15-1.48 3.11-1.17 3.11-1.17.62 1.58.23 2.74.11 3.03.73.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.23 5.63.41.35.77 1.05.77 2.12v3.08c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"
+  />
+</svg>
+          </a>
+        </footer>
+      </article>
+
+      <!-- DATA RELIABILITY -->
+      <article class="compact-project-card reliability-project reveal">
+        <div class="compact-card-header">
+          <span class="compact-project-icon blue-icon">
+            <i data-lucide="shield-check"></i>
+          </span>
+
+          <span class="project-status development">
+            <span></span>
+            IN DEVELOPMENT
+          </span>
+
+          <span class="compact-project-category purple-text">
+            DATA RELIABILITY
+          </span>
+        </div>
+
+        <h3>Data Reliability Copilot</h3>
+
+        <p>
+          AI-assisted platform for data profiling, anomaly detection,
+          quality recommendations, governance and machine-learning
+          readiness assessment.
+        </p>
+
+        <div class="project-technologies compact-technologies">
+          <span>FastAPI</span>
+          <span>Data Quality</span>
+          <span>LLMs</span>
+        </div>
+
+        <footer class="compact-project-footer">
+          <a
+            class="case-study-link blue-link"
+            href="pages/projects/data-reliability.html"
+          >
+            View Case Study
+            <i data-lucide="arrow-right"></i>
+          </a>
+
+          <a
+            class="project-github-link"
+            href="#"
+            aria-label="Data Reliability Copilot GitHub repository"
+          >
+            <svg
+  viewBox="0 0 24 24"
+  width="22"
+  height="22"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    fill="currentColor"
+    d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.13c-3.18.7-3.85-1.35-3.85-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.54-.29-5.21-1.27-5.21-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.11 1.17A10.8 10.8 0 0 1 12 6.01c.96 0 1.92.13 2.82.38 2.15-1.48 3.11-1.17 3.11-1.17.62 1.58.23 2.74.11 3.03.73.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.23 5.63.41.35.77 1.05.77 2.12v3.08c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"
+  />
+</svg>
+          </a>
+        </footer>
+      </article>
+    </div>
+
+    
+  </div>
+</section>
 
     <!-- PROFESSIONAL EVOLUTION -->
-<section class="evolution section" id="journey">
+<section class="evolution section portfolio-page" id="journey" data-page="journey" hidden>
   <div class="section-grid" aria-hidden="true"></div>
 
   <div class="container evolution-container">
@@ -1451,7 +1707,7 @@
 </section>
 
     <!-- SKILLS COMMAND CENTER -->
-<section class="skills-command section" id="skills">
+<section class="skills-command section portfolio-page" id="skills" data-page="skills" hidden>
   <div class="section-grid" aria-hidden="true"></div>
 
   <div class="container skills-container">
@@ -2248,7 +2504,7 @@
 </section>
 
     <!-- CONTACT -->
-<section class="contact-command section" id="contact">
+<section class="contact-command section portfolio-page" id="contact" data-page="contact" hidden>
   <div class="section-grid" aria-hidden="true"></div>
 
   <div class="container contact-container">
@@ -2611,7 +2867,18 @@
               rel="noopener noreferrer"
             >
               <div class="connection-icon">
-                <i data-lucide="github"></i>
+                <svg
+  viewBox="0 0 24 24"
+  width="22"
+  height="22"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    fill="currentColor"
+    d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.13c-3.18.7-3.85-1.35-3.85-1.35-.52-1.32-1.28-1.67-1.28-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.54-.29-5.21-1.27-5.21-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.03 0 0 .96-.31 3.11 1.17A10.8 10.8 0 0 1 12 6.01c.96 0 1.92.13 2.82.38 2.15-1.48 3.11-1.17 3.11-1.17.62 1.58.23 2.74.11 3.03.73.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.23 5.63.41.35.77 1.05.77 2.12v3.08c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"
+  />
+</svg>
               </div>
 
               <div>
@@ -2629,7 +2896,18 @@
               rel="noopener noreferrer"
             >
               <div class="connection-icon">
-                <i data-lucide="linkedin"></i>
+                <svg
+  viewBox="0 0 24 24"
+  width="22"
+  height="22"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    fill="currentColor"
+    d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.1 20.45H3.54V9H7.1v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"
+  />
+</svg>
               </div>
 
               <div>

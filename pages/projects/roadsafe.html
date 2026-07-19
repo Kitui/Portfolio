@@ -10,12 +10,11 @@
 
   <meta
     name="description"
-    content="RoadSafe Lakehouse case study by Paul John Kitui."
+    content="RoadSafe Lakehouse cloud data engineering case study by Paul John Kitui."
   >
 
   <title>RoadSafe Lakehouse | Paul John Kitui</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -24,810 +23,894 @@
     rel="stylesheet"
   >
 
-  <!-- Shared portfolio styles -->
   <link rel="stylesheet" href="../../assets/css/variables.css">
   <link rel="stylesheet" href="../../assets/css/base.css">
   <link rel="stylesheet" href="../../assets/css/components.css">
-
-  <!-- Case study styles -->
   <link rel="stylesheet" href="../../assets/css/case-study.css">
-  <link rel="stylesheet" href="../../assets/css/sidebar.css"
->
 
-  <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest" defer></script>
-
-  <!-- Shared scripts -->
   <script src="../../assets/js/theme.js" defer></script>
   <script src="../../assets/js/main.js" defer></script>
-  <script src="../../assets/js/sidebar.js" defer></script>
+  <script src="../../assets/js/case-study-sidebar.js" defer></script>
+  <script src="../../assets/js/roadsafe.js" defer></script>
 </head>
 
-<body class="case-study-page">
+<body class="case-study-page roadsafe-interactive-page">
 
   <a class="skip-link" href="#main-content">
     Skip to content
   </a>
 
-  <!-- MOBILE HEADER -->
-<header class="mobile-portfolio-header">
+  <aside class="portfolio-sidebar" id="portfolio-sidebar">
 
-  <a
-    class="mobile-brand"
-    href="../../index.html"
-    aria-label="Paul John Kitui portfolio home"
-  >
-    <span class="mobile-brand-mark">PK</span>
+  <div class="sidebar-brand">
+    <a href="../../index.html" aria-label="Paul John Kitui portfolio home">
+      <span class="sidebar-brand-mark">PK</span>
 
-    <span class="mobile-brand-name">
-      PAUL JOHN KITUI
-    </span>
-  </a>
+      <span class="sidebar-brand-copy">
+        <strong>PAUL JOHN KITUI</strong>
+        <small>CLOUD DATA ENGINEER</small>
+      </span>
+    </a>
+  </div>
 
-  <button
-    class="sidebar-mobile-toggle"
-    id="sidebar-mobile-toggle"
-    type="button"
-    aria-label="Open navigation"
-    aria-expanded="false"
-    aria-controls="portfolio-sidebar"
-  >
-    <i data-lucide="menu"></i>
-  </button>
+  <nav class="sidebar-navigation" aria-label="Portfolio navigation">
 
-</header>
+    <a href="../../index.html#home">
+      <i data-lucide="house"></i>
+      <span>HOME</span>
+    </a>
 
-<!-- GLOBAL SIDEBAR -->
-<aside
-  class="portfolio-sidebar"
-  id="portfolio-sidebar"
-  aria-label="Portfolio navigation"
->
-  <div class="sidebar-inner">
+    <a href="../../index.html#about">
+      <i data-lucide="user-round"></i>
+      <span>ABOUT</span>
+    </a>
 
-    <div class="sidebar-identity">
+    <a class="active" href="../../index.html#projects">
+      <i data-lucide="box"></i>
+      <span>PROJECTS</span>
+    </a>
 
-      <a
-        class="sidebar-brand"
-        href="../../index.html"
-        aria-label="Paul John Kitui portfolio home"
-      >
-        <span class="sidebar-brand-mark">
-          PK
-        </span>
+    <a href="../../index.html#journey">
+      <i data-lucide="activity"></i>
+      <span>PROFESSIONAL<br>EVOLUTION</span>
+    </a>
 
-        <span class="sidebar-brand-name">
-          PAUL JOHN KITUI
-        </span>
-      </a>
+    <a href="../../index.html#skills">
+      <i data-lucide="code-xml"></i>
+      <span>SKILLS</span>
+    </a>
 
-      <p class="sidebar-brand-role">
-        CLOUD DATA ENGINEER
+    <a href="../../index.html#contact">
+      <i data-lucide="mail"></i>
+      <span>CONTACT</span>
+    </a>
+
+  </nav>
+
+  <div class="sidebar-footer">
+
+    <button
+      class="sidebar-theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Switch to light theme"
+    >
+      <i data-lucide="sun"></i>
+      <span>LIGHT MODE</span>
+    </button>
+
+    <div class="sidebar-availability">
+      <strong>
+        <span></span>
+        AVAILABLE
+      </strong>
+
+      <p>
+        Open to opportunities and technical collaborations.
       </p>
-
     </div>
 
-    <nav
-      class="sidebar-navigation"
-      aria-label="Main portfolio navigation"
-    >
+    <div class="sidebar-socials">
 
       <a
-        class="sidebar-nav-link"
-        href="../../index.html#home"
-        data-tooltip="Home"
+        href="https://github.com/kitui"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
       >
-        <i data-lucide="house"></i>
-
-        <span class="sidebar-nav-label">
-          HOME
-        </span>
+        <i data-lucide="github"></i>
       </a>
 
       <a
-        class="sidebar-nav-link"
-        href="../../index.html#about"
-        data-tooltip="About"
+        href="https://www.linkedin.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
       >
-        <i data-lucide="user-round"></i>
-
-        <span class="sidebar-nav-label">
-          ABOUT
-        </span>
+        <i data-lucide="linkedin"></i>
       </a>
 
       <a
-        class="sidebar-nav-link active"
-        href="../../index.html#projects"
-        data-tooltip="Projects"
-      >
-        <i data-lucide="box"></i>
-
-        <span class="sidebar-nav-label">
-          PROJECTS
-        </span>
-      </a>
-
-      <a
-        class="sidebar-nav-link"
-        href="../../index.html#journey"
-        data-tooltip="Professional Evolution"
-      >
-        <i data-lucide="activity"></i>
-
-        <span class="sidebar-nav-label">
-          PROFESSIONAL EVOLUTION
-        </span>
-      </a>
-
-      <a
-        class="sidebar-nav-link"
-        href="../../index.html#skills"
-        data-tooltip="Skills"
-      >
-        <i data-lucide="code-2"></i>
-
-        <span class="sidebar-nav-label">
-          SKILLS
-        </span>
-      </a>
-
-      <a
-        class="sidebar-nav-link"
-        href="../../index.html#contact"
-        data-tooltip="Contact"
+        href="mailto:paulkitui@gmail.com"
+        aria-label="Email"
       >
         <i data-lucide="mail"></i>
-
-        <span class="sidebar-nav-label">
-          CONTACT
-        </span>
       </a>
-
-    </nav>
-
-    <div class="sidebar-bottom">
-
-      <button
-        class="sidebar-theme-toggle"
-        id="theme-toggle"
-        type="button"
-        aria-label="Switch to light theme"
-      >
-        <span class="sidebar-theme-main">
-          <i data-lucide="sun"></i>
-          <span>LIGHT MODE</span>
-        </span>
-
-        <i data-lucide="moon"></i>
-      </button>
-
-      <div class="sidebar-availability">
-
-        <div class="sidebar-availability-heading">
-          <span class="sidebar-availability-dot"></span>
-          AVAILABLE
-        </div>
-
-        <p>
-          Open to opportunities and technical collaborations.
-        </p>
-
-      </div>
-
-      <div class="sidebar-socials">
-
-        <a
-          class="sidebar-social-link"
-          href="https://github.com/kitui"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-        >
-          <i data-lucide="github"></i>
-        </a>
-
-        <a
-          class="sidebar-social-link"
-          href="https://www.linkedin.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
-          <i data-lucide="linkedin"></i>
-        </a>
-
-        <a
-          class="sidebar-social-link"
-          href="mailto:paulkitui@gmail.com"
-          aria-label="Email"
-        >
-          <i data-lucide="mail"></i>
-        </a>
-
-      </div>
-
-      <div class="sidebar-copyright">
-        <p>© 2026 Paul John Kitui</p>
-        <p>All rights reserved.</p>
-      </div>
 
     </div>
 
   </div>
+
 </aside>
 
-<div
-  class="sidebar-backdrop"
-  id="sidebar-backdrop"
-  aria-hidden="true"
-></div>
-<div class="page-content"></div>
+<button
+  class="sidebar-mobile-toggle"
+  id="sidebar-mobile-toggle"
+  type="button"
+  aria-label="Open portfolio navigation"
+  aria-expanded="false"
+>
+  <i data-lucide="menu"></i>
+</button>
+
+  <div class="case-study-shell">
   <main id="main-content" class="case-study-main">
 
-    <!-- HERO -->
-    <section class="case-hero">
+    <!-- INTRODUCTION -->
+    <section class="roadsafe-intro">
       <div class="case-grid-background" aria-hidden="true"></div>
 
       <div class="container">
 
-        <div class="case-hero-layout">
+        <div class="roadsafe-intro-inner">
 
-          <div class="case-title-area">
+          <p class="case-eyebrow roadsafe-eyebrow">
+            CASE STUDY
+            <span>/</span>
+            DATA ENGINEERING
+          </p>
 
-            <p class="case-eyebrow">
-              CASE STUDY
-              <span>/</span>
-              DATA ENGINEERING
-            </p>
+          <h1>RoadSafe Lakehouse</h1>
 
-            <h1>RoadSafe Lakehouse</h1>
+          <p class="roadsafe-intro-description">
+            A governed cloud data platform that transforms large-scale
+            accident records into reliable analytical datasets,
+            semantic business views and decision-ready insight.
+          </p>
 
-            <p class="case-subtitle">
-              Building a governed medallion lakehouse for large-scale
-              accident analytics.
-            </p>
+          <div class="case-meta">
 
-            <div class="case-meta">
+            <span class="case-status roadsafe-status">
+              <span class="status-dot"></span>
+              COMPLETED
+            </span>
 
-              <span class="case-status">
-                <span class="status-dot"></span>
-                COMPLETED
-              </span>
+            <span class="meta-item">
+              <span class="meta-dot"></span>
+              Databricks
+            </span>
 
-              <span class="meta-item">
-                <span class="meta-dot"></span>
-                Databricks
-              </span>
+            <span class="meta-item">
+              <span class="meta-dot"></span>
+              Delta Lake
+            </span>
 
-              <span class="meta-item">
-                <span class="meta-dot"></span>
-                Delta Lake
-              </span>
+            <span class="meta-item">
+              <span class="meta-dot"></span>
+              Unity Catalog
+            </span>
 
-              <span class="meta-item">
-                <span class="meta-dot"></span>
-                BigQuery
-              </span>
+            <span class="meta-item">
+              <span class="meta-dot"></span>
+              BigQuery
+            </span>
 
-              <span class="meta-item">
-                <span class="meta-dot"></span>
-                PySpark
-              </span>
-
-            </div>
-          </div>
-
-          <div class="case-metrics">
-
-            <article class="metric-card">
-              <div class="metric-icon blue">
-                <i data-lucide="database"></i>
-              </div>
-
-              <div>
-                <h2>100,000+</h2>
-                <h3>Records Processed</h3>
-                <p>
-                  Accident and road-safety records ingested,
-                  validated and transformed.
-                </p>
-              </div>
-            </article>
-
-            <article class="metric-card">
-              <div class="metric-icon purple">
-                <i data-lucide="layers-3"></i>
-              </div>
-
-              <div>
-                <h2>Bronze / Silver / Gold</h2>
-                <h3>Medallion Architecture</h3>
-                <p>
-                  Layered data design delivering trusted,
-                  curated and business-ready data.
-                </p>
-              </div>
-            </article>
-
-            <article class="metric-card">
-              <div class="metric-icon orange">
-                <i data-lucide="chart-no-axes-combined"></i>
-              </div>
-
-              <div>
-                <h2>BigQuery</h2>
-                <h3>Analytics Publishing</h3>
-                <p>
-                  Curated analytical models prepared for
-                  reporting and self-service BI.
-                </p>
-              </div>
-            </article>
+            <span class="meta-item">
+              <span class="meta-dot"></span>
+              PySpark
+            </span>
 
           </div>
+
+          <p class="roadsafe-intro-instruction">
+            Select sections from the case-study navigator to build
+            the RoadSafe engineering story below.
+          </p>
 
         </div>
+
       </div>
     </section>
 
-    <!-- OVERVIEW AND ARCHITECTURE -->
-    <section class="case-section compact-section">
-      <div class="container">
+    <!-- EXPLORER -->
+    <section class="roadsafe-explorer">
+      <div class="container roadsafe-explorer-layout">
 
-        <div class="overview-layout">
+        <!-- NAVIGATION -->
+        <aside class="roadsafe-section-navigation">
 
-          <article class="case-panel overview-panel">
+          <div class="explorer-navigation-heading">
+            <span>CASE STUDY NAVIGATOR</span>
 
-            <div class="panel-heading">
-              <span class="panel-icon">
-                <i data-lucide="file-text"></i>
-              </span>
+            <strong id="roadsafe-visible-count">
+              0 SECTIONS OPEN
+            </strong>
+          </div>
 
+          <div
+            class="roadsafe-navigation-list"
+            role="group"
+            aria-label="RoadSafe case study sections"
+          >
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="metrics"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Platform Metrics</span>
+              <span class="nav-section-number">01</span>
+            </button>
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="overview"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Project Overview</span>
+              <span class="nav-section-number">02</span>
+            </button>
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="architecture"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Medallion Architecture</span>
+              <span class="nav-section-number">03</span>
+            </button>
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="problem"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>The Problem</span>
+              <span class="nav-section-number">04</span>
+            </button>
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="solution"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>The Solution</span>
+              <span class="nav-section-number">05</span>
+            </button>
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="ownership"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>What I Built</span>
+              <span class="nav-section-number">06</span>
+            </button>
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="stack"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Technology Stack</span>
+              <span class="nav-section-number">07</span>
+            </button>
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="pipeline"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Pipeline Flow</span>
+              <span class="nav-section-number">08</span>
+            </button>
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="governance"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Governance & Quality</span>
+              <span class="nav-section-number">09</span>
+            </button>
+
+            <button
+              class="roadsafe-nav-button"
+              type="button"
+              data-roadsafe-toggle="outcomes"
+              aria-pressed="false"
+            >
+              <span class="nav-state-indicator"></span>
+              <span>Key Outcomes</span>
+              <span class="nav-section-number">10</span>
+            </button>
+
+          </div>
+
+          <div class="roadsafe-navigation-actions">
+
+            <button
+              id="show-all-roadsafe"
+              class="roadsafe-navigation-action"
+              type="button"
+            >
+              <i data-lucide="layout-grid"></i>
+              Show All
+            </button>
+
+            <button
+              id="hide-all-roadsafe"
+              class="roadsafe-navigation-action"
+              type="button"
+            >
+              <i data-lucide="layers-2"></i>
+              Hide All
+            </button>
+
+          </div>
+
+        </aside>
+
+        <!-- CONTENT BOARD -->
+        <div
+          class="roadsafe-content-board"
+          id="roadsafe-content-board"
+        >
+
+          <div
+            class="roadsafe-empty-state"
+            id="roadsafe-empty-state"
+          >
+            <div class="empty-state-symbol roadsafe-empty-symbol">
+              <i data-lucide="database-zap"></i>
+            </div>
+
+            <h2>Build the RoadSafe case study</h2>
+
+            <p>
+              Select one or more sections from the navigator.
+              Every selected engineering card will fly into
+              its assigned position.
+            </p>
+          </div>
+
+          <!-- METRICS -->
+          <section
+            class="roadsafe-board-section roadsafe-wide-section"
+            data-roadsafe-section="metrics"
+            hidden
+          >
+            <div class="roadsafe-board-heading">
+              <span>01</span>
+              <h2>Platform Metrics</h2>
+            </div>
+
+            <div class="roadsafe-metric-grid">
+
+              <article class="roadsafe-metric-card">
+                <div class="roadsafe-metric-icon cyan">
+                  <i data-lucide="database"></i>
+                </div>
+
+                <h3>100,000+</h3>
+                <strong>Records Processed</strong>
+
+                <p>
+                  Accident records ingested, validated and
+                  transformed through the data platform.
+                </p>
+              </article>
+
+              <article class="roadsafe-metric-card">
+                <div class="roadsafe-metric-icon silver">
+                  <i data-lucide="layers-3"></i>
+                </div>
+
+                <h3>Four Layers</h3>
+                <strong>Medallion Architecture</strong>
+
+                <p>
+                  Bronze, Silver, Gold and Semantic layers
+                  organise data from ingestion to reporting.
+                </p>
+              </article>
+
+              <article class="roadsafe-metric-card">
+                <div class="roadsafe-metric-icon purple">
+                  <i data-lucide="workflow"></i>
+                </div>
+
+                <h3>Automated</h3>
+                <strong>Workflow Orchestration</strong>
+
+                <p>
+                  Databricks Workflows manage dependencies,
+                  execution order and pipeline monitoring.
+                </p>
+              </article>
+
+              <article class="roadsafe-metric-card">
+                <div class="roadsafe-metric-icon gold">
+                  <i data-lucide="chart-no-axes-combined"></i>
+                </div>
+
+                <h3>BigQuery</h3>
+                <strong>Analytics Publishing</strong>
+
+                <p>
+                  Curated datasets are published for reporting,
+                  analytical queries and executive insight.
+                </p>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- OVERVIEW -->
+          <section
+            class="roadsafe-board-section roadsafe-wide-section"
+            data-roadsafe-section="overview"
+            hidden
+          >
+            <div class="roadsafe-board-heading">
+              <span>02</span>
               <h2>Project Overview</h2>
             </div>
 
-            <p>
-              RoadSafe Lakehouse is an end-to-end data engineering
-              solution that consolidates accident records into a
-              unified and governed analytical platform.
-            </p>
+            <div class="roadsafe-overview-layout">
 
-            <p>
-              The platform uses a medallion architecture on Databricks
-              with Delta Lake and Unity Catalog to establish data
-              quality, traceability, governance and secure access.
-            </p>
+              <div class="roadsafe-overview-copy">
 
-            <p>
-              Curated datasets and semantic business views are then
-              published to Google BigQuery for downstream reporting,
-              dashboarding and analytical consumption.
-            </p>
+                <p>
+                  RoadSafe Lakehouse is an end-to-end cloud data
+                  engineering platform designed to consolidate and
+                  govern large-scale accident records.
+                </p>
 
-          </article>
+                <p>
+                  The solution uses Databricks, Delta Lake and PySpark
+                  to ingest, validate, transform and curate data
+                  through a structured medallion architecture.
+                </p>
 
-          <article class="case-panel architecture-panel">
-
-            <div class="architecture-flow">
-
-              <div class="architecture-source architecture-group">
-
-                <span class="architecture-label">
-                  DATA SOURCES
-                </span>
-
-                <div class="source-list">
-
-                  <div>
-                    <i data-lucide="file-spreadsheet"></i>
-                    <span>Road Accident Records</span>
-                  </div>
-
-                  <div>
-                    <i data-lucide="car-front"></i>
-                    <span>Vehicle and Driver Data</span>
-                  </div>
-
-                  <div>
-                    <i data-lucide="map-pin"></i>
-                    <span>Location and Road Network</span>
-                  </div>
-
-                  <div>
-                    <i data-lucide="cloud-sun"></i>
-                    <span>Weather and External Data</span>
-                  </div>
-
-                </div>
+                <p>
+                  Unity Catalog provides governance and controlled
+                  access, while curated datasets and semantic views
+                  support reporting through BigQuery and Databricks AI/BI.
+                </p>
 
               </div>
 
-              <div class="architecture-arrow">
-                <i data-lucide="arrow-right"></i>
-              </div>
+              <div class="roadsafe-overview-features">
 
-              <div class="architecture-medallion architecture-group">
-
-                <span class="architecture-label purple-text">
-                  MEDALLION LAKEHOUSE ARCHITECTURE
+                <span>
+                  <i data-lucide="database"></i>
+                  Centralised accident data
                 </span>
 
-                <div class="medallion-layers">
+                <span>
+                  <i data-lucide="layers-3"></i>
+                  Governed lakehouse architecture
+                </span>
 
-                  <div class="architecture-layer bronze-layer">
-                    <span class="layer-name">BRONZE</span>
-
-                    <i data-lucide="database"></i>
-
-                    <h3>Raw Ingestion</h3>
-
-                    <p>
-                      Raw data landed as-is in Delta format.
-                    </p>
-                  </div>
-
-                  <div class="layer-arrow">
-                    <i data-lucide="arrow-right"></i>
-                  </div>
-
-                  <div class="architecture-layer silver-layer">
-                    <span class="layer-name">SILVER</span>
-
-                    <i data-lucide="database"></i>
-
-                    <h3>Cleaned and Conformed</h3>
-
-                    <p>
-                      Standardised, validated and deduplicated data.
-                    </p>
-                  </div>
-
-                  <div class="layer-arrow">
-                    <i data-lucide="arrow-right"></i>
-                  </div>
-
-                  <div class="architecture-layer gold-layer">
-                    <span class="layer-name">GOLD</span>
-
-                    <i data-lucide="database"></i>
-
-                    <h3>Curated and Aggregated</h3>
-
-                    <p>
-                      Business-ready models and analytical summaries.
-                    </p>
-                  </div>
-
-                  <div class="layer-arrow">
-                    <i data-lucide="arrow-right"></i>
-                  </div>
-
-                  <div class="architecture-layer semantic-layer">
-                    <span class="layer-name">SEMANTIC</span>
-
-                    <i data-lucide="box"></i>
-
-                    <h3>Analytics Layer</h3>
-
-                    <p>
-                      Consistent metrics and reporting views.
-                    </p>
-                  </div>
-
-                </div>
-
-                <div class="governance-strip">
+                <span>
                   <i data-lucide="shield-check"></i>
-
-                  UNITY CATALOG — GOVERNANCE, LINEAGE,
-                  ACCESS CONTROL AND DATA QUALITY
-                </div>
-
-              </div>
-
-              <div class="architecture-arrow">
-                <i data-lucide="arrow-right"></i>
-              </div>
-
-              <div class="architecture-output architecture-group">
-
-                <span class="architecture-label">
-                  CONSUMPTION
+                  Quality and access controls
                 </span>
 
-                <div class="output-item">
-                  <i data-lucide="chart-no-axes-combined"></i>
-
-                  <div>
-                    <h3>BigQuery</h3>
-                    <p>Published analytical datasets</p>
-                  </div>
-                </div>
-
-                <div class="output-item">
+                <span>
                   <i data-lucide="bar-chart-3"></i>
-
-                  <div>
-                    <h3>BI and Dashboards</h3>
-                    <p>Executive and self-service reporting</p>
-                  </div>
-                </div>
+                  Analytics-ready business views
+                </span>
 
               </div>
 
             </div>
+          </section>
 
-          </article>
+          <!-- ARCHITECTURE -->
+          <section
+            class="roadsafe-board-section roadsafe-wide-section"
+            data-roadsafe-section="architecture"
+            hidden
+          >
+            <div class="roadsafe-board-heading">
+              <span>03</span>
+              <h2>Medallion Architecture</h2>
+            </div>
 
-        </div>
+            <div class="roadsafe-architecture">
 
-      </div>
-    </section>
+              <div class="roadsafe-architecture-node" data-architecture-node="0">
+                <div class="roadsafe-node-icon source">
+                  <i data-lucide="files"></i>
+                </div>
+                <h3>Source Data</h3>
+                <p>Raw accident records and source metadata</p>
+              </div>
 
-    <!-- PROBLEM, SOLUTION, PERSONAL CONTRIBUTION -->
-    <section class="case-section compact-section">
-      <div class="container">
+              <div class="roadsafe-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
 
-        <div class="three-column-layout">
+              <div class="roadsafe-architecture-node" data-architecture-node="1">
+                <div class="roadsafe-node-icon bronze">
+                  <i data-lucide="database"></i>
+                </div>
+                <h3>Bronze</h3>
+                <p>Raw ingestion with audit metadata</p>
+              </div>
 
-          <article class="case-panel problem-panel">
+              <div class="roadsafe-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
 
-            <div class="panel-heading red-heading">
-              <span class="panel-icon">
-                <i data-lucide="circle-alert"></i>
-              </span>
+              <div class="roadsafe-architecture-node" data-architecture-node="2">
+                <div class="roadsafe-node-icon quarantine">
+                  <i data-lucide="shield-alert"></i>
+                </div>
+                <h3>Validation</h3>
+                <p>Quality checks and quarantine handling</p>
+              </div>
 
+              <div class="roadsafe-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="roadsafe-architecture-node" data-architecture-node="3">
+                <div class="roadsafe-node-icon silver">
+                  <i data-lucide="database"></i>
+                </div>
+                <h3>Silver</h3>
+                <p>Cleaned and conformed records</p>
+              </div>
+
+              <div class="roadsafe-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="roadsafe-architecture-node" data-architecture-node="4">
+                <div class="roadsafe-node-icon gold">
+                  <i data-lucide="database"></i>
+                </div>
+                <h3>Gold</h3>
+                <p>Curated analytical models</p>
+              </div>
+
+              <div class="roadsafe-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="roadsafe-architecture-node" data-architecture-node="5">
+                <div class="roadsafe-node-icon semantic">
+                  <i data-lucide="box"></i>
+                </div>
+                <h3>Semantic</h3>
+                <p>Consistent metrics and business views</p>
+              </div>
+
+              <div class="roadsafe-wave-path">
+                <span></span>
+                <i data-lucide="arrow-right"></i>
+              </div>
+
+              <div class="roadsafe-architecture-node" data-architecture-node="6">
+                <div class="roadsafe-node-icon output">
+                  <i data-lucide="chart-no-axes-combined"></i>
+                </div>
+                <h3>Analytics</h3>
+                <p>BigQuery and AI/BI dashboards</p>
+              </div>
+
+            </div>
+
+            <div class="roadsafe-governance-strip">
+              <i data-lucide="shield-check"></i>
+              Unity Catalog · lineage · access control · audit logging · monitoring
+            </div>
+          </section>
+
+          <!-- PROBLEM -->
+          <section
+            class="roadsafe-board-section roadsafe-standard-section roadsafe-problem-card"
+            data-roadsafe-section="problem"
+            hidden
+          >
+            <div class="roadsafe-board-heading red">
+              <span>04</span>
               <h2>The Problem</h2>
             </div>
 
-            <ul class="case-list red-list">
-              <li>Data distributed across inconsistent sources and formats.</li>
-              <li>Duplicates, missing values and unreliable data quality.</li>
-              <li>No consistent analytical source of truth.</li>
-              <li>Manual reporting with limited governance and trust.</li>
+            <ul class="roadsafe-board-list red">
+              <li>Accident data was distributed across inconsistent records.</li>
+              <li>Missing values and duplicates reduced analytical trust.</li>
+              <li>Manual reporting lacked repeatability and governance.</li>
+              <li>No unified source supported consistent safety analysis.</li>
+              <li>Operational monitoring and lineage were limited.</li>
             </ul>
+          </section>
 
-          </article>
-
-          <article class="case-panel solution-panel">
-
-            <div class="panel-heading green-heading">
-              <span class="panel-icon">
-                <i data-lucide="circle-check-big"></i>
-              </span>
-
+          <!-- SOLUTION -->
+          <section
+            class="roadsafe-board-section roadsafe-standard-section roadsafe-solution-card"
+            data-roadsafe-section="solution"
+            hidden
+          >
+            <div class="roadsafe-board-heading green">
+              <span>05</span>
               <h2>The Solution</h2>
             </div>
 
-            <ul class="case-list green-list">
-              <li>Centralised lakehouse using medallion architecture.</li>
-              <li>Automated data quality validation and monitoring.</li>
-              <li>Curated analytical datasets and semantic models.</li>
-              <li>BigQuery publishing for downstream analytics.</li>
+            <ul class="roadsafe-board-list green">
+              <li>Centralised ingestion into a governed Delta Lake platform.</li>
+              <li>Automated schema and data-quality validation.</li>
+              <li>Bronze, Silver, Gold and Semantic transformations.</li>
+              <li>Unity Catalog governance and controlled data access.</li>
+              <li>BigQuery publishing for analytical consumption.</li>
             </ul>
+          </section>
 
-          </article>
-
-          <article class="case-panel contribution-panel">
-
-            <div class="panel-heading blue-heading">
-              <span class="panel-icon">
-                <i data-lucide="code-xml"></i>
-              </span>
-
+          <!-- OWNERSHIP -->
+          <section
+            class="roadsafe-board-section roadsafe-wide-section"
+            data-roadsafe-section="ownership"
+            hidden
+          >
+            <div class="roadsafe-board-heading blue">
+              <span>06</span>
               <h2>What I Personally Built</h2>
             </div>
 
-            <div class="contribution-columns">
+            <div class="roadsafe-ownership-grid">
 
-              <ul class="case-list blue-list">
-                <li>End-to-end ingestion pipeline using PySpark.</li>
-                <li>Data validation rules and quality controls.</li>
-                <li>Bronze, Silver and Gold transformations.</li>
+              <ul class="roadsafe-board-list blue">
+                <li>PySpark ingestion and transformation pipelines.</li>
+                <li>Bronze, Silver, Gold and Semantic data layers.</li>
+                <li>Schema validation and data-quality controls.</li>
+                <li>Quarantine processing for invalid records.</li>
+                <li>Record hashing and ingestion metadata.</li>
               </ul>
 
-              <ul class="case-list blue-list">
+              <ul class="roadsafe-board-list blue">
+                <li>Databricks Workflow orchestration.</li>
                 <li>Unity Catalog governance and access controls.</li>
-                <li>Workflow orchestration using Databricks Jobs.</li>
+                <li>Audit logging and operational monitoring tables.</li>
                 <li>Curated BigQuery publishing workflows.</li>
+                <li>Executive analytical views and dashboards.</li>
               </ul>
 
             </div>
+          </section>
 
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- STACK, PIPELINE, OUTCOMES -->
-    <section class="case-section compact-section">
-      <div class="container">
-
-        <div class="bottom-grid">
-
-          <article class="case-panel stack-panel">
-
-            <div class="panel-heading">
-              <span class="panel-icon">
-                <i data-lucide="layers"></i>
-              </span>
-
+          <!-- STACK -->
+          <section
+            class="roadsafe-board-section roadsafe-standard-section"
+            data-roadsafe-section="stack"
+            hidden
+          >
+            <div class="roadsafe-board-heading">
+              <span>07</span>
               <h2>Technology Stack</h2>
             </div>
 
-            <div class="technology-grid">
+            <div class="roadsafe-stack-grid">
 
-              <span>
-                <i data-lucide="code-2"></i>
-                Python
-              </span>
-
-              <span>
-                <i data-lucide="sparkles"></i>
-                PySpark
-              </span>
-
-              <span>
-                <i data-lucide="database"></i>
-                Spark SQL
-              </span>
-
-              <span>
-                <i data-lucide="boxes"></i>
-                Databricks
-              </span>
-
-              <span>
-                <i data-lucide="triangle"></i>
-                Delta Lake
-              </span>
-
-              <span>
-                <i data-lucide="shield"></i>
-                Unity Catalog
-              </span>
-
-              <span>
-                <i data-lucide="chart-no-axes-combined"></i>
-                BigQuery
-              </span>
-
-              <span>
-                <i data-lucide="activity"></i>
-                Monitoring
-              </span>
+              <span><i data-lucide="code-2"></i>Python</span>
+              <span><i data-lucide="sparkles"></i>PySpark</span>
+              <span><i data-lucide="database"></i>Spark SQL</span>
+              <span><i data-lucide="boxes"></i>Databricks</span>
+              <span><i data-lucide="triangle"></i>Delta Lake</span>
+              <span><i data-lucide="shield"></i>Unity Catalog</span>
+              <span><i data-lucide="workflow"></i>Workflows</span>
+              <span><i data-lucide="cloud"></i>Google Cloud</span>
+              <span><i data-lucide="chart-no-axes-combined"></i>BigQuery</span>
+              <span><i data-lucide="bar-chart-3"></i>Databricks AI/BI</span>
 
             </div>
+          </section>
 
-          </article>
-
-          <article class="case-panel pipeline-panel">
-
-            <div class="panel-heading">
-              <span class="panel-icon">
-                <i data-lucide="workflow"></i>
-              </span>
-
-              <h2>Architecture and Pipeline Flow</h2>
+          <!-- PIPELINE -->
+          <section
+            class="roadsafe-board-section roadsafe-wide-section"
+            data-roadsafe-section="pipeline"
+            hidden
+          >
+            <div class="roadsafe-board-heading">
+              <span>08</span>
+              <h2>Pipeline Flow</h2>
             </div>
 
-            <div class="pipeline-steps">
+            <div class="roadsafe-pipeline-board">
 
-              <div class="pipeline-step">
+              <div class="roadsafe-pipeline-step" data-pipeline-node="0">
                 <span>01</span>
                 <h3>Ingest</h3>
-                <p>Land source data into the Bronze layer.</p>
+                <p>Load raw records and metadata.</p>
               </div>
 
-              <div class="pipeline-connector"></div>
+              <div class="roadsafe-pipeline-connector"></div>
 
-              <div class="pipeline-step">
+              <div class="roadsafe-pipeline-step" data-pipeline-node="1">
                 <span>02</span>
                 <h3>Validate</h3>
-                <p>Apply schema, completeness and quality checks.</p>
+                <p>Apply schemas and quality checks.</p>
               </div>
 
-              <div class="pipeline-connector"></div>
+              <div class="roadsafe-pipeline-connector"></div>
 
-              <div class="pipeline-step">
+              <div class="roadsafe-pipeline-step" data-pipeline-node="2">
                 <span>03</span>
-                <h3>Transform</h3>
-                <p>Clean and standardise records in Silver.</p>
+                <h3>Quarantine</h3>
+                <p>Separate invalid records for review.</p>
               </div>
 
-              <div class="pipeline-connector"></div>
+              <div class="roadsafe-pipeline-connector"></div>
 
-              <div class="pipeline-step">
+              <div class="roadsafe-pipeline-step" data-pipeline-node="3">
                 <span>04</span>
-                <h3>Curate</h3>
-                <p>Build analytical and business models in Gold.</p>
+                <h3>Transform</h3>
+                <p>Standardise and clean Silver data.</p>
               </div>
 
-              <div class="pipeline-connector purple-connector"></div>
+              <div class="roadsafe-pipeline-connector"></div>
 
-              <div class="pipeline-step purple-step">
+              <div class="roadsafe-pipeline-step" data-pipeline-node="4">
                 <span>05</span>
-                <h3>Govern</h3>
-                <p>Apply lineage, access and catalog controls.</p>
+                <h3>Curate</h3>
+                <p>Build Gold analytical models.</p>
               </div>
 
-              <div class="pipeline-connector purple-connector"></div>
+              <div class="roadsafe-pipeline-connector"></div>
 
-              <div class="pipeline-step purple-step">
+              <div class="roadsafe-pipeline-step" data-pipeline-node="5">
                 <span>06</span>
+                <h3>Govern</h3>
+                <p>Apply lineage and access controls.</p>
+              </div>
+
+              <div class="roadsafe-pipeline-connector"></div>
+
+              <div class="roadsafe-pipeline-step" data-pipeline-node="6">
+                <span>07</span>
                 <h3>Publish</h3>
-                <p>Expose curated datasets to BigQuery.</p>
+                <p>Expose curated data to BigQuery.</p>
               </div>
 
             </div>
+          </section>
 
-            <div class="observability-strip">
-              <i data-lucide="activity"></i>
-
-              OBSERVABILITY AND MONITORING —
-              DATA QUALITY, JOBS, COST AND PERFORMANCE
+          <!-- GOVERNANCE -->
+          <section
+            class="roadsafe-board-section roadsafe-wide-section"
+            data-roadsafe-section="governance"
+            hidden
+          >
+            <div class="roadsafe-board-heading purple">
+              <span>09</span>
+              <h2>Governance and Data Quality</h2>
             </div>
 
-          </article>
+            <div class="roadsafe-governance-grid">
 
-          <article class="case-panel outcomes-panel">
+              <article>
+                <i data-lucide="shield-check"></i>
+                <h3>Unity Catalog</h3>
+                <p>Centralised governance, access control and lineage.</p>
+              </article>
 
-            <div class="panel-heading">
-              <span class="panel-icon">
-                <i data-lucide="trophy"></i>
-              </span>
+              <article>
+                <i data-lucide="file-check-2"></i>
+                <h3>Schema Validation</h3>
+                <p>Consistent structure and controlled column handling.</p>
+              </article>
 
+              <article>
+                <i data-lucide="fingerprint"></i>
+                <h3>Record Hashing</h3>
+                <p>Stable record identification and duplicate detection.</p>
+              </article>
+
+              <article>
+                <i data-lucide="shield-alert"></i>
+                <h3>Quarantine Handling</h3>
+                <p>Invalid records isolated without stopping the pipeline.</p>
+              </article>
+
+              <article>
+                <i data-lucide="scroll-text"></i>
+                <h3>Audit Logging</h3>
+                <p>Pipeline execution and processing activity recorded.</p>
+              </article>
+
+              <article>
+                <i data-lucide="activity"></i>
+                <h3>Monitoring</h3>
+                <p>Workflow, quality and operational health visibility.</p>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- OUTCOMES -->
+          <section
+            class="roadsafe-board-section roadsafe-standard-section"
+            data-roadsafe-section="outcomes"
+            hidden
+          >
+            <div class="roadsafe-board-heading gold">
+              <span>10</span>
               <h2>Key Outcomes</h2>
             </div>
 
-            <div class="outcome-cards">
+            <div class="roadsafe-outcome-list">
 
-              <div class="outcome-card cyan-outcome">
+              <div>
+                <i data-lucide="database-zap"></i>
+                <span>Reliable ingestion of more than 100,000 records</span>
+              </div>
+
+              <div>
                 <i data-lucide="shield-check"></i>
-
-                <h3>Reliable Ingestion</h3>
-
-                <p>
-                  More than 100,000 records processed with
-                  validation and traceability.
-                </p>
+                <span>Governed and traceable analytical data</span>
               </div>
 
-              <div class="outcome-card purple-outcome">
-                <i data-lucide="landmark"></i>
-
-                <h3>Governed Analytics</h3>
-
-                <p>
-                  Trusted analytical data with lineage,
-                  governance and controlled access.
-                </p>
+              <div>
+                <i data-lucide="workflow"></i>
+                <span>Automated and repeatable pipeline execution</span>
               </div>
 
-              <div class="outcome-card orange-outcome">
+              <div>
                 <i data-lucide="chart-no-axes-combined"></i>
+                <span>Curated datasets for scalable reporting</span>
+              </div>
 
-                <h3>Scalable Reporting</h3>
-
-                <p>
-                  Curated datasets published for efficient,
-                  self-service analytics.
-                </p>
+              <div>
+                <i data-lucide="gauge"></i>
+                <span>Improved operational and data-quality visibility</span>
               </div>
 
             </div>
-
-          </article>
+          </section>
 
         </div>
 
       </div>
     </section>
 
-    <!-- ACTIONS -->
     <section class="case-actions-section">
       <div class="container case-actions">
 
@@ -861,16 +944,8 @@
       </div>
     </section>
 
-  </main>
-</div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.lucide) {
-        window.lucide.createIcons();
-      }
-    });
-  </script>
+   </main>
+ </div>
 
 </body>
 </html>
